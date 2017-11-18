@@ -1,0 +1,38 @@
+<ion-content padding class="back">
+	    
+	    	<div class="upper">
+	    		<h4>Add Details About You!</h4>	    		</div>
+	    	
+
+			<div class="details">
+		
+				<textarea cols="30" rows="10" [(ngModel)]="details"></textarea>	
+
+				<button ion-button clear  (tap)="goNext($event,details)">NEXT</button>		
+			</div>
+
+
+
+			<ion-footer *ngIf="key == false">
+	
+				<ion-row class="pager">				 
+					  	<button ion-button clear (tap)="goBack($event)">
+					  		1
+					  	</button>
+						<button ion-button clear style="background: grey;color:black">
+					  		2
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		3
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		4
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		5
+					  	</button>				
+				</ion-row>
+
+			</ion-footer>
+			
+</ion-content>

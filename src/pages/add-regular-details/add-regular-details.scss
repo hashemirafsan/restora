@@ -1,0 +1,50 @@
+page-add-regular-details {
+		.back{
+		.scroll-content {
+    		overflow: hidden;
+ 		 }
+		background-color: rgb(66,66,66);
+
+		.upper{
+			width: 100%;
+			h4{
+			text-align: center;
+			color: #e6e5eb;
+			margin-bottom:20%;
+			}
+			img{
+				margin-left:35%;
+			}
+		}
+		.details{
+
+			textarea{
+				margin:auto;
+				background: url('../assets/images/Intro/icon.png') no-repeat center;
+				background-size: 10%;
+				color:#e6e5eb;
+				font-style: italic;
+				display: inherit;
+				width: 100%;		
+				}		
+	
+			button{
+					margin-top:5%;
+					color:rgb(134,194,198);
+					float: right;
+					border:1px solid black;
+			}	
+		}		
+
+		.pager{
+			overflow: hidden;
+			button{
+				margin-left:-25%;
+				border-radius: 50%;
+				border:1px solid black;
+				display: inline-block;
+				margin:auto;
+			}
+		}
+	}
+}
