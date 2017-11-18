@@ -1,0 +1,55 @@
+page-choose-user {
+		.back{
+		.scroll-content {
+    		overflow: hidden;
+ 		}
+ 		background-color: rgb(66,66,66);
+ 		ion-grid {
+		  height: 80%;
+			h3{
+			text-align: center;
+			color: #e6e5eb;		
+			}
+		  ion-row {
+		    height: 50.00%;
+
+				.upper{
+					
+					.chatbubbles{
+						border-radius: 5px;
+					    display: inline-block;
+					    padding: 5px 10px;
+					    position: relative;
+					    max-width: 50%;
+					    background-color: #e6e5eb;
+					    -webkit-transform: rotate(360deg) skew(-5deg);
+					}
+				}
+				.lower{
+					font-size: 85%;
+					margin-top: 5%;
+						p,h4{						
+							color:#e6e5eb;						
+						}	
+						button{
+							color:rgb(134,194,198);
+							float: right;
+						}
+				}	
+			}
+		  
+		}
+		
+		
+		
+		.pager{
+			button{
+				margin-left:-25%;
+				border-radius: 50%;
+				border:1px solid black;
+				display: inline-block;
+				margin:auto;
+			}
+		}
+	}
+}

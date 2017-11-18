@@ -1,0 +1,65 @@
+<ion-content padding class="back">
+	    
+				<h3>Choose Some Restarant</h3>
+			    <img src="assets/images/Intro/chooseRestaurant.png" width="100%" height="30%">
+			  
+			   	
+			 
+
+		 <ion-scroll scrollY="true" style="width: 100%; height: 40%;">
+			<ion-list>
+				<ion-item class="list-item">
+				  	<ion-avatar item-start>
+				      <img src="assets/images/RestaurantProfile/restaurant-pro01.jpg">
+				    </ion-avatar>
+				    <ion-label>Panshi</ion-label>
+				    <ion-checkbox (tap)="Checkbox('Panshi')" item-end></ion-checkbox>
+				 </ion-item>
+
+				 <ion-item class="list-item">
+				  	<ion-avatar item-start>
+				      <img src="assets/images/RestaurantProfile/restaurant-pro02.jpg">
+				    </ion-avatar>
+				    <ion-label>Royal Kitchen</ion-label>
+				    <ion-checkbox (tap)="Checkbox('RoyalKitchen')" item-end></ion-checkbox>
+				 </ion-item>
+
+				 <ion-item class="list-item">
+				  	<ion-avatar item-start>
+				      <img src="assets/images/RestaurantProfile/restaurant-pro03.jpg">
+				    </ion-avatar>
+				    <ion-label>The Titanic</ion-label>
+				    <ion-checkbox (tap)="Checkbox('The Titanic')" item-end></ion-checkbox>
+				 </ion-item>
+
+			</ion-list>
+		</ion-scroll>
+
+			<div class="btn">
+				<button ion-button clear (tap)="goNext($event)">NEXT</button>	
+			</div>
+
+
+			<ion-footer>
+	
+				<ion-row class="pager">				 
+					  	<button ion-button clear (tap)="goBack2($event)">
+					  		1
+					  	</button>
+						<button ion-button clear (tap)="goBack1($event)">
+					  		2
+					  	</button>
+					  	<button ion-button clear (tap)="goBack($event)">
+					  		3
+					  	</button>
+					  	<button ion-button clear  (tap)="goNext($event)" style="background: grey;color:black">
+					  		4
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		5
+					  	</button>				
+				</ion-row>
+
+			</ion-footer>
+			
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content padding class="back">
+	<ion-grid>    
+	    	<h3>Who Are You?!</h3>
+			<ion-row padding class="regUser">
+					<div class="upper">
+						<img src="assets/images/Intro/regUser.png" width="20%">
+						<div class="chatbubbles">
+							<p>Wanna eat?</p>
+						</div>
+
+					</div>
+					<div class="lower">
+							<h4>Regular User</h4>
+							<p>They are common people who will use this app.They will represent their individual self.They can write reviews and find their nearby restaurant with the best services.</p>
+							<button ion-button clear (tap)="regularUser($event)">Accept</button>
+					</div>			
+			</ion-row>
+
+			<ion-row padding class="restUser">
+					<div class="upper">
+						<img src="assets/images/Intro/restUser.png" width="20%">
+						<div class="chatbubbles">
+							<p>Wanna advertise?</p>
+						</div>
+
+					</div>
+					<div class="lower">
+							<h4>Restaurant Authority</h4>
+							<p>They are restaurant authority who will represent
+							their own restaurants.They can add food list and their special offers.Only restaurant authority can have this type of account.</p>
+							<button ion-button clear>Accept</button>
+					</div>
+			</ion-row>
+	</ion-grid>		
+
+			<ion-footer>
+	
+				<ion-row class="pager">				 
+					  	<button ion-button clear style="background: grey;color:black">
+					  		1
+					  	</button>
+						<button ion-button clear disabled>
+					  		2
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		3
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		4
+					  	</button>
+					  	<button ion-button clear disabled>
+					  		5
+					  	</button>				
+				</ion-row>
+
+			</ion-footer>
+
+</ion-content>

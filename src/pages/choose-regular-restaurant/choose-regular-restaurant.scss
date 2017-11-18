@@ -1,0 +1,37 @@
+page-choose-regular-restaurant {
+		.back{
+		background-color: rgb(66,66,66);
+		font-color: #e6e5eb;
+		h3{
+			text-align: center;
+			color: #e6e5eb;
+			}
+		img{
+			margin-bottom: 5px;
+		}
+		.list{
+			.list-item{
+				background:rgb(66,66,66);
+				font-size: 20px;
+			}
+			
+		}
+		.btn{	
+			float: right;
+			button{
+						color:rgb(134,194,198);
+						float: right;
+						border:1px solid black;
+			}
+		}
+		.pager{
+			button{
+				margin-left:-25%;
+				border-radius: 50%;
+				border:1px solid black;
+				display: inline-block;
+				margin:auto;
+			}
+		}
+	}
+}
