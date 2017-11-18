@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Profile</ion-title>
+    <ion-title>{{ userInfo.name }}</ion-title>
 
      <ion-buttons end>
       <button ion-button icon-only menuToggle="right">
@@ -23,7 +23,7 @@
 <ion-content>
 	<div class="profile">
 		<div class="profile-background">
-			<h1>Rashemi Jani</h1>
+			<h1>{{ userInfo.name }}</h1>
 			<div class="profile-image">
 				<img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="">
 			</div>
@@ -33,21 +33,21 @@
 		
 			<div class="details">
 				<div class="dashboard-title">
-			      <p>Rashemi's Activity</p>
+			      <p>{{ userInfo.first_name }}'s Activity</p>
 			      <p><ion-icon name="pin"></ion-icon> <span>Jalalabadh, Sylhet</span></p>
 			    </div>
 			    
 			    <ul class="list-unstyled list-inline activity">
 			      <li>
-			        <span>24</span>
+			        <span>{{ userDetails.total }}</span>
 			        <p>Reviews</p>
 			      </li>
 			      <li>
-			        <span>10</span>
+			        <span>{{ userDetails.food }}</span>
 			        <p>Food</p>
 			      </li>
 			      <li>
-			        <span>10</span>
+			        <span>{{ userDetails.visited }}</span>
 			        <p>Visited</p>
 			      </li>
 			    </ul>
@@ -57,11 +57,11 @@
 			        <p>Categories</p>
 			      </li>
 			      <li>
-			        <span>10</span>
+			        <span>{{ userDetails.following }}</span>
 			        <p>Following</p>
 			      </li>
 			      <li>
-			        <span>10</span>
+			        <span>{{ userDetails.follower }}</span>
 			        <p>Followers</p>
 			      </li>
 			    </ul>
@@ -69,9 +69,25 @@
 			
 				
 			<div class="center">
-				<h3 >Recent Food </h3>
-				<ion-badge item-end>Fast food</ion-badge>
-				<ion-badge item-end>Dessert</ion-badge>
+				<h3 >Recent Food Category</h3>
+				<ion-badge item-end *ngFor="let item of userInfo.choose_food_category">{{ item.food_category.food_categories_name }}</ion-badge>
+			</div>
+			
+			<ion-card>
+				<ion-fab top right>
+				    <button ion-fab color="light" mini><ion-icon name="md-share"></ion-icon></button>
+				    <ion-fab-list side="left">
+				      <button ion-fab color="secondary"><ion-icon name="logo-facebook"></ion-icon></button>
+				    </ion-fab-list>
+			  	</ion-fab>
+			    <img src="../../assets/images/background.jpg"/>
+			    <div class="card-title">São Paulo</div>
+			    <div class="card-subtitle">41 Listings</div>
+			</ion-card>
+
+			<div class="center">
+				<h3 >Recent Restaurant Category</h3>
+				<ion-badge item-end *ngFor="let item of userInfo.choose_restaurant_category">{{ item.restaurant_category.restaurant_categories_name }}</ion-badge>
 			</div>
 			
 			<ion-card>
@@ -89,8 +105,7 @@
 
 			<div class="center">
 				<h3>Recent Restaurant </h3>
-				<ion-badge item-end>Fat Belly</ion-badge>
-				<ion-badge item-end>Etopia</ion-badge>
+				<ion-badge item-end *ngFor="let item of userInfo.choose_restaurant">{{ item.restaurant.restaurant_name }}</ion-badge>
 			</div>
 			
 
@@ -108,7 +123,7 @@
 
 			<div class="details">
 				<p>About Details</p>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+				<p>{{ userInfo.about }}</p>
 			</div>
 
 		</div>

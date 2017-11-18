@@ -6,6 +6,10 @@ import { ChooseRegularRestaurantCatPage } from '../choose-regular-restaurant-cat
 
 import { Keyboard } from '@ionic-native/keyboard';
 
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../../assets/Auth/Auth';
+
 @Component({
   selector: 'page-add-regular-details',
   templateUrl: 'add-regular-details.html',
@@ -34,17 +38,23 @@ export class AddRegularDetailsPage {
   }
 
   goNext(event,details){
-    this.data =
-    {
-      name:this.name,
-      email:this.email,
-      details:details
-    }
+    this.updateDetails(1, details);
   	this.navCtrl.setRoot(ChooseRegularRestaurantCatPage,this.data);
   }
   goBack(event){
   	this.navCtrl.setRoot(ChooseUserPage,{name:this.name,email:this.email});
     
+  }
+
+  updateDetails(user,details) {
+    axios
+      .post(route.app_url + '/update-user/' + user, {about: details})
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   private onShow(e) {

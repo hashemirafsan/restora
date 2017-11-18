@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController} from 'ionic-angular';
-
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../../assets/Auth/Auth';
 
 @Component({
   selector: 'page-home',
@@ -15,10 +17,20 @@ export class HomePage {
   public restCatId;
   public restId;
   public foodCatId;
+  public userInfo = {};
+  public user = {};
 
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController,public navParams: NavParams) {
-
+    axios
+      .get(route.app_url + '/user-info/1')
+      .then(res => {
+        this.userInfo = res.data
+        this.user = this.userInfo['user']
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   ionViewDidLoad(){

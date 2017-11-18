@@ -18,6 +18,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
 
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../assets/Auth/Auth';
+
 
 @Component({
   selector: 'page-app',
@@ -41,6 +45,7 @@ export class MyApp {
     ];
 
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {
