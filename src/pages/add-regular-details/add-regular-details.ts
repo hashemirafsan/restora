@@ -44,6 +44,7 @@ export class AddRegularDetailsPage {
   }
   goBack(event){
   	this.navCtrl.setRoot(ChooseUserPage,{name:this.name,email:this.email});
+
   }
 
   private onShow(e) {
