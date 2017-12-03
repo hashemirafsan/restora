@@ -1,112 +1,42 @@
 <ion-content padding class="back">
-	    
+	<h3>Choose Some Restarant Category</h3>		
+	<img src="assets/images/Intro/ChooseRestaurantCat.png" width="100%" height="30%">
 
-				<h3>Choose Some Restarant Category</h3>
-			
-			    <img src="assets/images/Intro/ChooseRestaurantCat.png" width="100%" height="30%">
+	<ion-scroll scrollY="true" style="width: 100%; height: 40%;">
+		<ion-list class="list">
+			<ion-item *ngFor="let item of restCatId" class="list-item">
+			  	<ion-avatar item-start>
+			      <img src="assets/images/RestaurantCat/Chinese.png">
+			    </ion-avatar>
+			    <ion-label>{{item.restaurant_categories_name}}</ion-label>
+			    <ion-checkbox [(ngModel)]="item.status" (tap)="Checkbox('Chinese')" item-end>
+			    </ion-checkbox>
+			</ion-item>
+		</ion-list>
+	</ion-scroll>
 
-		
-		 <ion-scroll scrollY="true" style="width: 100%; height: 40%;">
-			<ion-list class="list">
-				<ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Chinese.png">
-				    </ion-avatar>
-				    <ion-label>Chinese</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Chinese')" item-end>
-				    </ion-checkbox>
-				 </ion-item>
+	<div class="btn">
+		<button ion-button clear (tap)="goNext($event)">NEXT</button>	
+	</div>
 
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Cafe.png">
-				    </ion-avatar>
-				    <ion-label>Cafe</ion-label>
-				    <ion-checkbox  item-end (tap)="Checkbox('Cafe')"></ion-checkbox>
-			  </ion-item>
-
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/FiveStar.png">
-				    </ion-avatar>
-				    <ion-label>Five Star</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Five Star')" item-end></ion-checkbox>
-			  </ion-item>
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Chinese.png">
-				    </ion-avatar>
-				    <ion-label>Chinese</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Chinese')" item-end></ion-checkbox>
-				 </ion-item>
-
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Cafe.png">
-				    </ion-avatar>
-				    <ion-label>Cafe</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Cafe')" item-end></ion-checkbox>
-			  </ion-item>
-
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/FiveStar.png">
-				    </ion-avatar>
-				    <ion-label>Five Star</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Five Star')" item-end></ion-checkbox>
-			  </ion-item>
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Chinese.png">
-				    </ion-avatar>
-				    <ion-label>Chinese</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Chinese')" item-end></ion-checkbox>
-				 </ion-item>
-
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/Cafe.png">
-				    </ion-avatar>
-				    <ion-label>Cafe</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Cafe')" item-end></ion-checkbox>
-			  </ion-item>
-
-			  <ion-item class="list-item">
-				  	<ion-avatar item-start>
-				      <img src="assets/images/RestaurantCat/FiveStar.png">
-				    </ion-avatar>
-				    <ion-label>Five Star</ion-label>
-				    <ion-checkbox (tap)="Checkbox('Five Star')" item-end></ion-checkbox>
-			  </ion-item>
-
-			</ion-list>
-		</ion-scroll>
-
-			<div class="btn">
-				<button ion-button clear (tap)="goNext($event)">NEXT</button>	
-			</div>
-
-
-			<ion-footer>
-	
-				<ion-row class="pager">				 
-					  	<button ion-button clear (tap)="goBack1($event)">
-					  		1
-					  	</button>
-						<button ion-button clear (tap)="goBack($event)">
-					  		2
-					  	</button>
-					  	<button ion-button clear (tap)="goBack($event)" style="background: grey;color:black">
-					  		3
-					  	</button>
-					  	<button ion-button clear disabled>
-					  		4
-					  	</button>
-					  	<button ion-button clear disabled>
-					  		5
-					  	</button>				
-				</ion-row>
-
-			</ion-footer>
+	<ion-footer>
+		<ion-row class="pager">				 
+			  	<button ion-button clear (tap)="goBack1($event)">
+			  		1
+			  	</button>
+				<button ion-button clear (tap)="goBack($event)">
+			  		2
+			  	</button>
+			  	<button ion-button clear (tap)="goBack($event)" style="background: grey;color:black">
+			  		3
+			  	</button>
+			  	<button ion-button clear disabled>
+			  		4
+			  	</button>
+			  	<button ion-button clear disabled>
+			  		5
+			  	</button>				
+		</ion-row>
+	</ion-footer>
 			
 </ion-content>

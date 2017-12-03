@@ -11,12 +11,28 @@ import { AddRegularDetailsPage } from '../pages/add-regular-details/add-regular-
 import { ChooseRegularRestaurantCatPage } from '../pages/choose-regular-restaurant-cat/choose-regular-restaurant-cat';
 import { ChooseRegularRestaurantPage } from '../pages/choose-regular-restaurant/choose-regular-restaurant';
 import { ChooseRegularFoodCatPage } from '../pages/choose-regular-food-cat/choose-regular-food-cat';
+import { Geolocation } from '@ionic-native/geolocation';
+import {
+ GoogleMaps,
+ GoogleMap,
+ GoogleMapsEvent,
+ GoogleMapOptions,
+ CameraPosition,
+ MarkerOptions,
+ Marker
+} from '@ionic-native/google-maps';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
+
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../assets/Auth/Auth';
 
 
 @Component({
@@ -28,11 +44,27 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
+  public getData;
+  map: GoogleMap;
+
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, private googlePlus: GooglePlus, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public statusBar: StatusBar, private googlePlus: GooglePlus, public splashScreen: SplashScreen, private geolocation: Geolocation) {
     this.initializeApp();
 
+    this.geolocation.getCurrentPosition().then((position) => {
+      this.getData = "Can't find you!";
+      console.log(position)
+
+      this.nativeGeocoder.reverseGeocode(position.coords.latitude, position.coords.longitude)
+        .then((result: NativeGeocoderReverseResult) => this.getData = result)
+        .catch((error: any) => console.log(error));
+
+     // resp.coords.latitude
+     // resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
@@ -41,6 +73,7 @@ export class MyApp {
     ];
 
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {

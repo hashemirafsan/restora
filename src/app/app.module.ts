@@ -24,6 +24,9 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {HttpModule} from '@angular/http';
 import { Ionic2RatingModule } from 'ionic2-rating';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 @NgModule({
   declarations: [    
@@ -67,6 +70,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     Sim,
     GooglePlus,
     NativeStorage,
+    Geolocation,
+    NativeGeocoder,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

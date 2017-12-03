@@ -46,7 +46,7 @@
     <div class="card-title">São Paulo</div>
     <div class="card-subtitle">41 Listings</div>
   </ion-card> -->
-  <div class="temp">
+  <!-- <div class="temp">
     <h1>temporary data</h1>
     <p>name : {{name}}</p>  
     <p>email : {{email}}</p>  
@@ -54,26 +54,25 @@
     <p>restaurant Cat : {{restCatId}}</p> 
     <p>Restaurant : {{restId}}</p> 
     <p>food Cat : {{foodCatId}}</p> 
-  </div>
+  </div> -->
 
 
   <div class="dashboard">
     <div class="dashboard-title">
-      <p>Rashemi's Activity</p>
-      <p><ion-icon name="pin"></ion-icon> <span>Jalalabadh, Sylhet</span></p>
+      <p>{{user.first_name}}'s Activity</p>
+      <p><ion-icon name="pin"></ion-icon> <span>{{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
     </div>
-    
     <ul class="list-unstyled list-inline activity">
       <li>
-        <span>24</span>
+        <span>{{userInfo.total}}</span>
         <p>Reviews</p>
       </li>
       <li>
-        <span>10</span>
+        <span>{{userInfo.food}}</span>
         <p>Food</p>
       </li>
       <li>
-        <span>10</span>
+        <span>{{userInfo.visited}}</span>
         <p>Visited</p>
       </li>
     </ul>

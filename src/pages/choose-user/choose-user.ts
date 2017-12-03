@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import { AddRegularDetailsPage } from '../add-regular-details/add-regular-details';
-
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../../assets/Auth/Auth';
 
 @Component({
   selector: 'page-choose-user',
@@ -23,16 +24,23 @@ export class ChooseUserPage {
     console.log(this.name+this.email);
   }
 
+
+
   regularUser(event){
-  	this.data =
-  	{
-  		name:this.name,
-  		email:this.email
-  	}
+  	this.updateUser(1, 'regular')
   	this.navCtrl.setRoot(AddRegularDetailsPage,this.data);
   }
 
- 
+  updateUser(user, type) {
+    axios
+      .post(route.app_url + '/update-user/' + user , {type: type})
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+
+      })
+  }
   
 
 }

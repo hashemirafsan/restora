@@ -6,6 +6,9 @@ import { AddRegularDetailsPage } from '../add-regular-details/add-regular-detail
 import { ChooseRegularRestaurantCatPage } from '../choose-regular-restaurant-cat/choose-regular-restaurant-cat';
 import { ChooseRegularRestaurantPage } from '../choose-regular-restaurant/choose-regular-restaurant';
 import { HomePage } from '../home/home';
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../../assets/Auth/Auth';
 
 
 @Component({
@@ -19,10 +22,21 @@ export class ChooseRegularFoodCatPage {
   public details;
   public restCatId;
   public restId;
-  public foodCatId;
+  public foodCatId = [];
   public data;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    axios
+      .get(route.app_url + '/all-food-category')
+      .then(res => {
+        _.map(res.data, (item) => {
+          item.status = false;
+        })
+        this.foodCatId = res.data;
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   Checkbox(check){
@@ -38,15 +52,7 @@ export class ChooseRegularFoodCatPage {
   }
 
   goNext(event){
-    this.data=
-    {
-      name:this.name,
-      email:this.email,
-      details:this.details,
-      restCatId:this.restCatId,
-      restId:this.restId,
-      foodCatId:this.foodCatId
-    }
+    this.updateFoodCategory(1);
   	this.navCtrl.setRoot(HomePage,this.data);
     console.log(this.data);
   }
@@ -61,6 +67,21 @@ export class ChooseRegularFoodCatPage {
   }
   goBack3(event){
   	this.navCtrl.setRoot(ChooseUserPage,{name:this.name,email:this.email});
+  }
+
+  updateFoodCategory(user) {
+    let arr = [];
+    _.forEach(this.foodCatId, (item) => {
+      item.status ? arr.push(item.id) : false
+    })
+    axios
+      .post(route.app_url + '/update-user/' + user, {food_category: arr} )
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
   
 
