@@ -1,26 +1,25 @@
-<ion-content padding>
-<div class="intro">
-	<img src="assets/images/Intro/intro1.png" width="100%">
+<ion-content padding style="padding: 0px;">
+<div class="intro-login">
+
+	<div class="shadow"></div>
+
+	<div class="intro-content">
+		<ion-card>
+		
+		  <img src="assets/images/Intro/logo.png" alt="" width="50%">
+		
+		</ion-card>
+		
+		<div text-center class="google-login">
+			<button ion-button icon-left round  color="danger" (tap)="getLogin($event)">
+		  	<ion-icon name="logo-google"></ion-icon>
+		 	 Get Login with Google+
+			</button>
+		</div>
+		
+	</div>
+
 </div>
-
-<div class="lower">
-
-
-	<ion-card>
-	
-	  <img src="assets/images/Intro/logo.png" alt="" width="50%">
-	
-	</ion-card>
-
-</div> 	
-
-    
-	<ion-footer text-center>
-		<button ion-button icon-left round  color="danger" (tap)="getLogin($event)">
-  	<ion-icon name="logo-google"></ion-icon>
- 	 Get Login with Google+
-	</button>
-	</ion-footer>
 
 
 </ion-content>

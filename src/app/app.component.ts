@@ -40,6 +40,7 @@ import { route } from '../assets/Auth/Auth';
   templateUrl: 'app.html'
 })
 export class MyApp {
+  
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
