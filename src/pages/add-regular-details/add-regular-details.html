@@ -1,37 +1,43 @@
-<ion-content padding class="back">
-	    
-	    	<div class="upper">
-	    		<h4>Add Details About You!</h4>	    		</div>
-	    	
-			<div class="details">
-		
-				<textarea cols="30" rows="10" [(ngModel)]="details"></textarea>	
+<ion-content padding >
 
-				<button ion-button clear  (tap)="goNext($event,details)">NEXT</button>		
+	<div class="add-regular-details">
+		<div class="shadow"></div>
+		<div class="regular-details-wrapper">
+			<div class="regular-details-intro" text-center>
+				<p>Add Details About You!</p>
 			</div>
 
+			<div class="regular-details-content">
+				<div class="details" text-center>
+		
+					<textarea cols="30" rows="10" [(ngModel)]="details"></textarea>	
 
+					<button  ion-button color="light" outline   (tap)="goNext($event,details)">NEXT</button>		
+				</div>
+			</div>
+		</div>
+	</div>
 
-			<ion-footer *ngIf="key == false">
-	
-				<ion-row class="pager">				 
-					  	<button ion-button clear (tap)="goBack($event)">
-					  		1
-					  	</button>
-						<button ion-button clear style="background: grey;color:black">
-					  		2
-					  	</button>
-					  	<button ion-button clear disabled>
-					  		3
-					  	</button>
-					  	<button ion-button clear disabled>
-					  		4
-					  	</button>
-					  	<button ion-button clear disabled>
-					  		5
-					  	</button>				
-				</ion-row>
+	<ion-footer *ngIf="key == false">
 
-			</ion-footer>
+		<ion-row class="pager">				 
+			  	<button ion-button clear disabled (tap)="goBack($event)"  style="background: white;color:black">
+			  		1
+			  	</button>
+				<button ion-button clear   style="background: white;color:black">
+			  		2
+			  	</button>
+			  	<button ion-button clear disabled  style="background: white;color:black">
+			  		3
+			  	</button>
+			  	<button ion-button clear disabled  style="background: white;color:black">
+			  		4
+			  	</button>
+			  	<button ion-button clear disabled  style="background: white;color:black">
+			  		5
+			  	</button>				
+		</ion-row>
+
+	</ion-footer>
 			
 </ion-content>
