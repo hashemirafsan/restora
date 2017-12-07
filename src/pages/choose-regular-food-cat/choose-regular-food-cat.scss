@@ -1,37 +1,89 @@
 page-choose-regular-food-cat {
-		.back{
-		background-color: rgb(66,66,66);
-		font-color: #e6e5eb;
-		h3{
-			text-align: center;
-			color: #e6e5eb;
-			}
-		img{
-			margin-bottom: 5px;
+ 
+	.add-regular-food-cat {
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+		background: url('../assets/images/Intro/choose_food_cat.jpg') no-repeat center;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		.shadow {
+			position: absolute;
+			background: rgba(black,0.5);
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
-		.list{
-			.list-item{
-				background:rgb(66,66,66);
-				font-size: 20px;
+		.regular-food-cat-wrapper {
+			position: relative;
+			height: 100%;
+		 	width: 100%;
+		 	margin:0;
+			z-index: 9999;
+			.regular-food-cat-intro {
+				p {
+					font-family: 'Cabin Sketch', cursive;
+					color: white;
+					font-size: 40px;
+				}
 			}
+
+			.regular-food-cat-content {
+					overflow-y:scroll;
+					height: 50%;
+					width: 95%;
+					margin:auto;
+					ion-card{	
+						background: rgba(184, 184, 184, 0.68);
+						z-index:9999;
+						ion-item{							
+								background: none;
+								font-family: 'Cabin Sketch', cursive;
+								color: white;
+								font-size: 20px;
+								ion-label{
+									padding: 0;
+								}
+								ion-checkbox{
+									margin:0;
+								}
+	
+								.checkbox-md .checkbox-icon{
+									display: none;
+									visibility: hidden;
+								}
+								
+						}
+					}
+			}	
+				button {
+					margin-top:5%;
+				}
+				
 			
 		}
-		.btn{
-			float: right;
-			button{
-						color:rgb(134,194,198);
-						float: right;
-						border:1px solid black;
-			}	
+		
+	}
+		.scroll-content.scroll-content.scroll-content {
+			padding: 0px;
+	    	overflow: hidden;
+	  	}
+  	.pager {
+		button{
+			background: white;
+			height: 40px;
+			width: 40px;
+			margin-left:-25%;
+			border-radius: 50%;
+			/*border:1px solid black;*/
+			display: inline-block;
+			margin:auto;
 		}
-		.pager{
-			button{
-				margin-left:-25%;
-				border-radius: 50%;
-				border:1px solid black;
-				display: inline-block;
-				margin:auto;
-			}
+		.white {
+			background: white;
 		}
 	}
+
 }

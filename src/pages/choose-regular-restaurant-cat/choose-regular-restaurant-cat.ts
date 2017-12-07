@@ -53,6 +53,7 @@ export class ChooseRegularRestaurantCatPage {
   	this.navCtrl.setRoot(AddRegularDetailsPage,{name:this.name,email:this.email,details:this.details});
   }
   goBack1(event){
+    console.log("hello");
   	this.navCtrl.setRoot(ChooseUserPage,{name:this.name,email:this.email});
   }
 
