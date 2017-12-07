@@ -1,6 +1,9 @@
 page-home {
 	.card-background-page {
 	  font-family: $primary-font;
+	  	#check {
+	  		width: 90% !important;
+	  	}
 	  	.dashboard {
 		  	padding: 10px 10px;
 		  	overflow: hidden;

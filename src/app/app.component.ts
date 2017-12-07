@@ -76,12 +76,15 @@ export class MyApp {
   }
 
 
+
+
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.rootPage = HomePage;
       // this.googlePlus.trySilentLogin({
       //   webClientId: '594029952654-45s1j3995chh2jj7ogq3fdj4vbuqogv1.apps.googleusercontent.com'
       // })
