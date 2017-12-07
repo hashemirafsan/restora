@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Restaurant Profile</ion-title>
+    <ion-title> {{ restaurant_details?.restaurant_name }} </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -20,17 +20,31 @@
 
   <div class="dashboard">
     <div class="dashboard-title">
-      <p>Panshi</p>
-      <p><ion-icon name="pin"></ion-icon> <span>Jallarpar Road Zindabazar,Sylhet</span></p>
+      <p>{{ restaurant_details?.restaurant_name }}</p>
+      <p><ion-icon name="pin"></ion-icon> <span>{{ restaurant_details?.address_line_1 }}, {{ restaurant_details?.area?.area_name}}, {{restaurant_details?.zila?.zila_name}}</span></p>
     </div>
+
+    <div>
+      <ion-item>
+        <ion-label style="color: black; text-align: right;"> Follow </ion-label>
+        <ion-toggle  (ngModel)="restaurant_details?.follow" checked="{{ restaurant_details?.follow }}" (tap)="changeToggle(restaurant_details?.follow)" ></ion-toggle>
+      </ion-item>
+    </div>
+
+    
     
     <ul class="list-unstyled list-inline activity">
       <li>
-        <span>24</span>
+        <span>{{ restaurant_details?.restaurantreview?.length }}</span>
         <p>Reviews</p>
       </li>
       <li>
-        <span>4.2</span>
+        <span>{{ restaurant_details?.restaurant_followers?.length }}</span>
+        <p>Followers</p>
+      </li>
+      <li>
+        <span>{{ restaurant_details?.avg_rating }}</span>
+        <p>Avg. Rating</p>
       </li>
     </ul>
   </div>
