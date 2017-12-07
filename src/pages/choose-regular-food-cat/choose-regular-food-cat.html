@@ -1,45 +1,49 @@
-<ion-content padding class="back">
-	    
-	<h3>Choose Some Food Category</h3>
-	<img src="assets/images/Intro/choosefoodCat.png" width="100%" height="30%">
+<ion-content padding text-center>
 
-	<ion-scroll scrollY="true" style="width: 100%; height: 40%;">
-		<ion-list>
-			<ion-item *ngFor="let item of foodCatId" class="list-item">
-			  	<ion-avatar item-start>
-			      <img src="assets/images/FoodCat/Snacks.png">
-			    </ion-avatar>
-			    <ion-label>{{item.food_categories_name}}</ion-label>
-			    <ion-checkbox [(ngModel)]="item.status" item-end></ion-checkbox>
-			 </ion-item>
-		</ion-list>
-	</ion-scroll>
+	<div class="add-regular-food-cat">
+		<div class="shadow"></div>
+		<div class="regular-food-cat-wrapper">
+			<div class="regular-food-cat-intro">
+				<p>Choose Some Food Category</p>
+			</div>
 
-	<div class="btn">
-		<button ion-button clear (tap)="goNext($event)">NEXT</button>	
+			<div class="regular-food-cat-content">
+						<ion-card *ngFor="let item of restCatId">
+							<ion-item>
+							  	<ion-avatar item-start>
+							      <img src="assets/images/FoodCat/Soup.png">
+							    </ion-avatar>
+							    <ion-label>{{item.food_categories_name}}</ion-label>
+							    <ion-icon name="ios-checkmark-circle-outline" item-end *ngIf="item.status==true"></ion-icon>
+							    <ion-checkbox [(ngModel)]="item.status" item-end>
+							    </ion-checkbox>
+							</ion-item>
+						</ion-card>
+						
+				</div>
+
+				<button  ion-button color="light" outline   (tap)="goNext($event,details)">NEXT</button>		
+		</div>
 	</div>
-
-
+	
 	<ion-footer>
-
 		<ion-row class="pager">				 
-			  	<button ion-button clear (tap)="goBack3($event)">
+			  	<button ion-button clear (tap)="goBack3($event)" style="background: white;color:black;text-decoration: none;opacity: .7">
 			  		1
 			  	</button>
-				<button ion-button clear (tap)="goBack2($event)">
+				<button ion-button clear (tap)="goBack2($event)" style="background: white;color:black;text-decoration: none;opacity: .7">
 			  		2
 			  	</button>
-			  	<button ion-button clear (tap)="goBack1($event)">
+			  	<button ion-button clear (tap)="goBack1($event)" style="background: white;color:black;text-decoration: none;opacity: .7">
 			  		3
 			  	</button>
-			  	<button ion-button clear  (tap)="goBack($event)">
+			  	<button ion-button clear ion-button clear (tap)="goBack($event)" style="background: white;color:black;text-decoration: none;opacity: .7">
 			  		4
 			  	</button>
-			  	<button ion-button clear  (tap)="goNext($event)" style="background: grey;color:black">
+			  	<button ion-button clear   style="background: white;color:black">
 			  		5
 			  	</button>				
 		</ion-row>
-
 	</ion-footer>
 			
 </ion-content>
