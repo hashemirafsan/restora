@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Vegetable Biryani</ion-title>
+    <ion-buttons end>
+    
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+			<div class="profile">
+        <ion-slides class="image-slider" loop="true" slidesPerView="2">
+          <ion-slide *ngFor="let img of images">
+            <img src="assets/images/FoodItem/{{img}}" class="thumb-img" imageViewer />
+          </ion-slide>
+        </ion-slides>
+
+
+
+      </div>
+			
+ 
+
+  <div class="dashboard">
+    <div class="dashboard-title">
+      <p>Panshi</p>
+      <p>
+        <span class="price">price : 300৳ 
+          <button ion-button clear [class]="buttonIcon" (tap)="toggleIcon()"><ion-icon [name]="buttonIcon"></ion-icon></button> 
+          <button ion-button outline class="ate">Ate</button>
+        </span><br/>
+        <ion-icon name="pin"></ion-icon> <span>Jallarpar Road Zindabazar,Sylhet</span></p>
+    </div>
+    
+    <ul class="list-unstyled list-inline activity">
+      <li>
+        <span>24</span>
+        <p>Reviews</p>
+      </li>
+      <li>
+        <span>4.2</span>
+        <p>Rated</p>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled list-inline activity">
+      <li>
+        <span>24</span>
+        <p>Ate</p>
+      </li>
+      <li>
+        <span>30</span>
+        <p>Loved</p>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
+<div class="reviews">
+	<div class="title">
+		<h3>Highlighted Reviews</h3>
+	</div>
+			<div class="review-1">
+				<div class="profile-img">
+					<img src="../assets/images/profile_img.png" alt="">
+				</div>
+				<p>Great Restaurant</p>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  💚</p>
+			</div>
+			<div class="review-1">
+				<div class="profile-img">
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" alt="">
+				</div>
+				<p>Great Restaurant</p>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  💚</p>
+			</div>
+			<div class="review-1">
+				<div class="profile-img">
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" alt="">
+				</div>
+				<p>Great Restaurant</p>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  💚</p>
+			</div>
+			<div class="review-1">
+				<div class="profile-img">
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" alt="">
+				</div>
+				<p>Great Restaurant</p>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  💚</p>
+			</div>
+	<div class="footer">
+		<button ion-button>Read All Reviews</button>
+	</div>
+</div>
+
+</ion-content>
