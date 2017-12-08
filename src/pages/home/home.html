@@ -33,7 +33,7 @@
       <ion-slides >
         <ion-slide id="check" *ngFor="let item of restaurants" (tap)="goRestaurant(item.id)">
           <ion-card>
-            <img src="assets/images/FoodCat/Soup.png">
+            <img src="{{ item?.restaurant_photo[0]?.url }}">
             <ion-card-content>
               <ion-card-title>
                {{item.restaurant_name}}
@@ -90,8 +90,113 @@
       </li>
     </ul>
   </div>
-  <div class="newsfeed" *ngIf="!searchBar">
+
+  <section>
+      <div class="food_header">
+        <h2>
+          <span>Food</span>
+        </h2>
+      </div>
+  </section>
+
+  <section class="news_feed" *ngIf="!searchBar">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              price : 150tk
+            </p>
+            <p>
+              Chicken Tikka
+            </p>
+            <p>
+              Panshi Restaurant
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              price : 150tk
+            </p>
+            <p>
+              Chicken Masala
+            </p>
+            <p>
+              Panshi Restaurant
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row> 
+    </ion-grid>
+    <div>
+      <div col-md-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div col-md-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      
+    </div>
+  </section> 
+ 
+  
+ <!--  <div class="newsfeed" *ngIf="!searchBar">
     <div class="newsfeed-item">
+      <div class="part-1-header">
+        <div class="img">
+          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
+        </div>
+      </div>
+      <div class="title text-center">
+         <p class="author-name">Rashemi Jani</p>
+      </div>
+      <div class="part-2-details">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+      </div>
+      <div class="part-3-footer">
+        <ion-icon name="alert"></ion-icon>
+        <ion-icon name="alert"></ion-icon>
+      </div>
+    </div>
+
+    <div class="newsfeed-item">
+      <h1>Header</h1>
       <div class="part-1-header">
         <div class="img">
           <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
@@ -126,25 +231,7 @@
         <ion-icon name="alert"></ion-icon>
       </div>
     </div>
-
-    <div class="newsfeed-item">
-      <div class="part-1-header">
-        <div class="img">
-          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
-        </div>
-      </div>
-      <div class="title text-center">
-         <p class="author-name">Rashemi Jani</p>
-      </div>
-      <div class="part-2-details">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
-      </div>
-      <div class="part-3-footer">
-        <ion-icon name="alert"></ion-icon>
-        <ion-icon name="alert"></ion-icon>
-      </div>
-    </div>
-  </div>
+  </div> -->
 
 
 </ion-content>
