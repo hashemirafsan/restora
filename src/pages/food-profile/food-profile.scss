@@ -1,27 +1,51 @@
-page-restaurant-profile {
-	.profile{		
-		.profile-back{
-			background: url("../assets/images/RestaurantProfile/restaurant1.jpg");
+page-food-profile {
+
+			height: 100%;
 			width: 100%;
-			background-position: center;
-			background-size: cover;
-			padding: 20px;	
-			display:  -webkit-flex;
-			justify-content:space-between;	
-			.space{
-				margin-bottom: 40%;
-			}			
-		}	
-		.profile-img{
-				width: 80px;
-				height: 80px;
-				border-radius: 5px;
-				overflow: hidden;
-				display: flex;
-				justify-content:space-between;
-				margin-top:-65px;
-				margin-left: 10px;
-			}
+
+		 	.profile{
+		 		height: 30%;
+		 		background: #e6e6e6;
+		 		ion-slide{
+		 			width: 100%;
+		 			margin-top:-25%;
+		 		
+			 		ion-slide.swiper-slide {
+				        left: 25%;
+				    }
+				    .slide-zoom {
+				        background: #e6e6e6;
+				        
+				    }
+				 
+				    .thumb-img {
+				      height: 100%;
+				      width: 100%;
+				      padding: 5px;
+				      position: absolute;
+					  
+				    }
+			    }
+		 	
+	.reactBar{
+		width: 90%;
+		margin: auto;
+		ul.react {
+		  		display: flex;
+		  		justify-content: space-around;
+		  		li {
+		  			text-align: center;
+		  			button {
+						font-size: 30px;
+						color:#000;
+		  			}
+		  			p {
+		  				font-weight: Bold;
+		  				font-size: 16px;
+		  			}
+		  		}
+		  	}
+	}
 	}
 
 	.dashboard {
@@ -33,6 +57,24 @@ page-restaurant-profile {
 		    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
 			    text-align: left;
 			    .dashboard-title {
+			    	.price{
+						font-weight: bold;
+			    	}
+			    	.ios-heart-outline{
+			    		color: #000;
+			    		font-size: 15px;
+			    		background: none;
+			    	}
+			    	.ios-heart{
+						color: red;
+			    		font-size: 15px;
+			    		background: none;
+			    	}
+				    .ate{
+			    		color: #000;
+			    		font-size: 10px;
+			    		padding: 0px 20px;			    		
+			    	}
 			    	display: flex;
 			    	justify-content: space-between;
 			    }

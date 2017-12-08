@@ -16,6 +16,7 @@ import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
+import { FoodProfilePage } from '../pages/food-profile/food-profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [    
@@ -41,13 +43,15 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     ListPage,
     TabsPage,
     ProfilePage,
-    RestaurantProfilePage
+    RestaurantProfilePage,
+    FoodProfilePage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +66,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     ListPage,
     TabsPage,
     ProfilePage,
-    RestaurantProfilePage
+    RestaurantProfilePage,
+    FoodProfilePage
   ],
   providers: [
     StatusBar,
