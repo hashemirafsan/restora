@@ -17,6 +17,7 @@ import {
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
 import { RestaurantProfilePage } from '../restaurant-profile/restaurant-profile';
+import { FoodProfilePage } from '../food-profile/food-profile';
 
 @Component({
   selector: 'page-home',
@@ -38,6 +39,7 @@ export class HomePage {
   public restaurants = [];
   public food = [];
   public loader = null;
+  public location = {};
 
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
     
@@ -53,7 +55,12 @@ export class HomePage {
 
     this.geolocation.getCurrentPosition().then((position) => {
       this.getData = "Can't find you!";
-      console.log(position)
+      console.log('pos',position)
+
+      this.location = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }
 
       this.nativeGeocoder.reverseGeocode(position.coords.latitude, position.coords.longitude)
         .then((result: NativeGeocoderReverseResult) => this.getData = result)
@@ -64,6 +71,12 @@ export class HomePage {
     }).catch((error) => {
       console.log('Error getting location', error);
     });
+  }
+
+  goFood(id) {
+    this.navCtrl.push(FoodProfilePage, {
+      food_id: id
+    })
   }
 
   goRestaurant(id) {
