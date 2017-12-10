@@ -46,10 +46,10 @@
 		        </ion-slide>
 		    </ion-slides>
 
-			<h3 class="text-center">Recommended Restaurant</h3>
+			<h4 class="text-center">Following Restaurant Food</h4>
 	        
 		    <ion-slides >
-		        <ion-slide id="check" *ngFor="let item of rec_food" (tap)="goRestaurant(item.id)">
+		        <ion-slide id="check" *ngFor="let item of rec_food" (tap)="goFood(item.id)">
 		          <ion-card>
 		            <img src="{{ item?.foods.food_photos[0]?.url }}">
 		            <ion-card-content>
@@ -58,6 +58,22 @@
 		               </ion-card-title>
 		               <p>{{ item.restaurant.restaurant_name }}</p>
 		               <p> price : {{ item.foods.price }} /- </p>
+		     
+		            </ion-card-content>
+		          </ion-card>
+		        </ion-slide>
+		    </ion-slides>
+
+		    <h3 class="text-center">Following Restaurant Category</h3>
+	        
+		    <ion-slides >
+		        <ion-slide id="check" *ngFor="let item of choose_res" (tap)="goRestaurant(item.id)">
+		          <ion-card>
+		            <img src="{{ item?.restaurant_photo[0]?.url }}">
+		            <ion-card-content>
+		              <ion-card-title>
+		               {{ item.restaurant_name }}
+		               </ion-card-title>
 		     
 		            </ion-card-content>
 		          </ion-card>
