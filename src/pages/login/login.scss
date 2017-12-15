@@ -1,0 +1,39 @@
+page-login {
+	.intro-login {
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+		background: url('../assets/images/Intro/login_background.jpg') no-repeat center;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		.shadow {
+			position: absolute;
+			background: rgba(black,0.5);
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.intro-content {
+			position: absolute;
+			z-index: 9999;
+			.google-login {
+				margin-top: 180px;
+			}
+		}
+
+		ion-card {
+			margin-top: 50px;
+			background: rgba(184, 184, 184, 0.68);
+			/*height: 194px;*/
+		}
+
+	}
+
+	.scroll-content.scroll-content.scroll-content {
+		padding: 0px;
+    	overflow: hidden;
+  	}
+
+}

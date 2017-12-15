@@ -1,0 +1,93 @@
+page-profile {
+	.profile {
+		margin: 0;
+		.profile-background {
+			width: 100%;
+			background: url('../assets/images/profile-background.jpg');
+			background-size: cover;
+			background-position: center;  
+			h1 {
+				letter-spacing: 1px;
+				padding-bottom: 5px;
+			}
+			margin-top: -20px;
+			text-align: center;
+			padding: 20px;
+			.profile-image {
+				width: 80px;
+			    height: 80px;
+			    border-radius: 5px;
+			    overflow: hidden;
+			    margin-bottom: 15px;
+			    margin: 0 auto;
+			}
+			.p-common {
+				margin-bottom: 0px;
+			}
+			.m-t-10 {
+				margin-top: 10px;
+			}
+			.f-s-18 {
+				font-size: 18px;
+    			letter-spacing: 1px;
+			}
+			.p-b-10 {
+				padding-bottom: 50px; 
+			}
+		}
+		.profile-details {
+			padding: 15px;
+			margin-top: -70px;
+			.details {
+				padding: 15px;
+				width: 100%;
+			    background: #424847;
+			    border-radius: 3px;
+			    color: white;
+			    text-align: left;
+			    margin-top: 20px;
+			    .dashboard-title {
+			    	display: flex;
+			    	justify-content: space-between;
+			    }
+			    ul.activity {
+			  		display: flex;
+			  		justify-content: space-around;
+			  		li {
+			  			text-align: center;
+			  			span {
+							font-size: 30px;
+			  			}
+			  			p {
+			  				font-size: 13px;
+			  			}
+			  		}
+			  	}
+			}
+			.center {
+		  		text-align: center;
+		  	}
+			ion-card {
+			    position: relative;
+			    text-align: center;
+		  	}
+		  	.card-title {
+			    position: absolute;
+			    top: 36%;
+			    font-size: 2.0em;
+			    width: 100%;
+			    font-weight: bold;
+			    color: #fff;
+		  	}
+		  	.card-subtitle {
+			    font-size: 1.0em;
+			    position: absolute;
+			    top: 52%;
+			    width: 100%;
+			    color: #fff;
+		  	}
+
+		}
+
+	}
+}

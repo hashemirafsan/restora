@@ -1,0 +1,61 @@
+<ion-content padding class="back">
+	<div class="choose-user-intro">
+
+		<div class="shadow"></div>
+		<div class="choose-user-content">
+			<ion-grid>
+				<div class="intro-h3" text-center>
+					<p>Who Are You?!</p>
+				</div>
+				<ion-row padding class="regUser">
+					<div class="upper" text-center>
+						<img src="assets/images/Intro/regUser.png" width="20%">
+					</div>
+					<div class="lower" text-center>
+						<h4>Regular User</h4>
+						<p>They are common people who will use this app.They will represent their individual self.They can write reviews and find their nearby restaurant by this app.</p>
+
+						<button ion-button color="light" outline (tap)="regularUser($event)">Accept</button>
+					</div>			
+				</ion-row>
+
+				<ion-row padding class="restUser">
+					<div class="upper" text-center>
+						<img src="assets/images/Intro/restUser.png" width="20%">
+					</div>
+					<div class="lower" text-center>
+							<h4>Restaurant Authority</h4>
+							<p>They are restaurant authority who will represent
+							their own restaurants.They can add food list and their special offers and authority can have this type of account.</p>
+							<button ion-button color="light" outline (tap)="regularUser($event)">Accept</button>
+					</div>
+				</ion-row>
+				
+			</ion-grid>
+
+		</div>
+	</div>
+
+	<ion-footer>
+
+		<ion-row class="pager">				 
+			  	<button ion-button clear style="background: white;color:black">
+			  		1
+			  	</button>
+				<button ion-button clear disabled style="background: white;color:black">
+			  		2
+			  	</button>
+			  	<button ion-button clear disabled style="background: white;color:black">
+			  		3
+			  	</button>
+			  	<button ion-button clear disabled style="background: white;color:black">
+			  		4
+			  	</button>
+			  	<button ion-button clear disabled style="background: white;color:black">
+			  		5
+			  	</button>				
+		</ion-row>
+
+	</ion-footer>
+
+</ion-content>

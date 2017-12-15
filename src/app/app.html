@@ -1,0 +1,59 @@
+<ion-menu [content]="content" side="left">
+  <ion-header>
+   <!--  <ion-toolbar>
+      <ion-title>Restora</ion-title>
+    </ion-toolbar> -->
+
+</ion-header>
+
+  <ion-content>
+    <div class="child-1">
+      <div class="img">
+        <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="">
+      </div>
+
+      <div class="profile">
+        <p>Rashemi Jani</p>
+        <p>Jani@authlab.io</p>
+        <p>{{ getData?.thoroughfare }} ,{{ getData?.locality }} </p>
+
+      </div>
+    </div>
+
+    <!-- <div class="gradian"></div> -->
+
+    <div class="child-2">
+        
+      
+      <!--  <ion-list>
+        <button menuClose ion-item *ngFor="let p of pages" (tap)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list> -->
+      <ul class="list-unstyled">
+        <li menuClose (tap)="openPage(1)">
+          <span>Dashboard</span>
+          <ion-icon ios="ios-arrow-round-forward-outline" md="md-arrow-round-forward" class="test-icon"></ion-icon>
+        </li>
+        <ion-list>  
+          <li menuClose (tap)="openPage(2)">
+              <span>Profile</span>
+              <ion-icon ios="ios-arrow-round-forward-outline" md="md-arrow-round-forward" class="test-icon"></ion-icon>
+          </li>
+        </ion-list>
+        <li menuClose>
+          <span>Settings</span>
+          <ion-icon ios="ios-arrow-round-forward-outline" md="md-arrow-round-forward" class="test-icon"></ion-icon>
+        </li>
+        <li>
+          <span>Log Out</span>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

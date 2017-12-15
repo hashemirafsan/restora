@@ -1,0 +1,121 @@
+page-choose-user {
+		.choose-user-intro {
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+			background: url('../assets/images/Intro/choose_user_background.jpg') no-repeat center;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			.shadow {
+				position: absolute;
+				background: rgba(black,0.6);
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.choose-user-content {
+				position: absolute;
+				z-index: 9999;
+				ion-grid {
+					.intro-h3 {
+						font-size: 40px;
+						font-family: 'Cabin Sketch', cursive;
+						color: white;
+					}
+					ion-row {
+						margin-top: 5px;
+						padding: 0;
+						.lower {
+							h4 {
+								font-family: 'Cabin Sketch', cursive;
+								color: white;
+								font-size: 25px;
+							}
+							p {
+								font-size: 14px;
+								color: white;
+								padding: 5px 20px;
+							}
+							button {
+								margin-top: -3px;
+							}
+						}
+					}
+					.restUser {
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+		.scroll-content.scroll-content.scroll-content {
+			padding: 0px;
+	    	overflow: hidden;
+	  	}
+
+	  	.pager{
+			button{
+				height: 40px;
+				width: 40px;
+				margin-left:-25%;
+				border-radius: 50%;
+				border:1px solid black;
+				display: inline-block;
+				margin:auto;
+			}
+		}
+		/*.back{
+		.scroll-content {
+    		overflow: hidden;
+ 		}
+ 		background-color: rgb(66,66,66);
+ 		ion-grid {
+		  height: 80%;
+			h3{
+			text-align: center;
+			color: #e6e5eb;		
+			}
+		  ion-row {
+		    height: 50.00%;
+
+				.upper{
+					
+					.chatbubbles{
+						border-radius: 5px;
+					    display: inline-block;
+					    padding: 5px 10px;
+					    position: relative;
+					    max-width: 50%;
+					    background-color: #e6e5eb;
+					    -webkit-transform: rotate(360deg) skew(-5deg);
+					}
+				}
+				.lower{
+					font-size: 85%;
+					margin-top: 5%;
+						p,h4{						
+							color:#e6e5eb;						
+						}	
+						button{
+							color:rgb(134,194,198);
+							float: right;
+						}
+				}	
+			}
+		  
+		}
+		
+		
+		
+		.pager{
+			button{
+				margin-left:-25%;
+				border-radius: 50%;
+				border:1px solid black;
+				display: inline-block;
+				margin:auto;
+			}
+		}
+	}*/
+}

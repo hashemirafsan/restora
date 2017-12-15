@@ -1,0 +1,133 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$primary-font : 'Lato', sans-serif;
+
+page-app {
+
+	/*.scroll-content {
+	     padding: 16px; 
+	}*/
+	.menu-bar {
+		float:left !important;
+
+		.item:first-child {
+			width:30px;
+			height:2px;
+			border-radius: 1px;
+			background: rgba(black,0.5);
+			margin-bottom:5px;
+		}
+		.item:nth-child(2) {
+			width:25px;
+			height:2px;
+			border-radius: 1px;
+			margin-bottom:5px;
+			background: rgba(black,0.5);
+		}
+		.item:last-child {
+			width:20px;
+			height:2px;
+			border-radius: 1px;
+			background: rgba(black,0.5);
+		}
+	}
+	.child-1 {
+
+		padding: 15px;
+		width: 100%;
+		background: url('../assets/images/background.jpg');
+		background-size: cover;
+		background-position: center;  
+		.img {
+			width: 80px;
+		    height: 80px;
+		    border-radius: 5px;
+		    overflow: hidden;
+		    margin-bottom: 15px;
+		}
+		.profile {
+			color: black;
+			p:first-child {
+				font-family: $primary-font;
+				font-size: 18px;
+				margin-bottom: 0px;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+			}
+			p:last-child {
+				font-family: $primary-font;
+				color: darker(black,50);
+				font-size: 14px;
+				margin: 0px;
+			}
+		}
+	}
+
+	.gradian {
+		padding: 20px 0px;
+		background: linear-gradient(#dbe0e6, white);
+	}
+
+	.child-2 {
+		padding: 15px;
+		font-family: $primary-font;
+
+		
+
+		ul {
+			li {
+				text-align: center;
+			    letter-spacing: 0.1em;
+			    font-size: 15px;
+			    font-weight: 400;
+			    background: white;
+			    padding: 10px 20px;
+			    margin-bottom: 10px;
+			    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+			    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+			    cursor: pointer;
+			    display: flex;
+			    justify-content: space-between;
+			    align-items: center;
+			    -webkit-transition: all 0.3s ease-out;
+			    transition: all 0.3s ease-out;
+			    overflow: hidden;
+
+			    &:hover {
+					box-shadow: 1px 1px 11px 1px rgba(0, 0, 0, 0.1);
+
+					.test-icon {
+						margin-right: 0px;
+					}
+			    }
+
+				&:last-child {
+					margin-bottom:0px;
+				}
+
+				.test-icon {
+					font-size: 1.2em;
+					margin-right: -60px;
+					transition: all 0.3s ease-out;
+				}
+			}
+		}
+	}
+
+
+}
