@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+=======
+// import { ImageViewerController } from 'ionic-img-viewer';
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 
 @Component({
   selector: 'page-food-profile',
   templateUrl: 'food-profile.html',
 })
 export class FoodProfilePage {
+<<<<<<< HEAD
   @ViewChild(Slides) slides: Slides;
   @ViewChild(Slides) picslider: Slides;
 
@@ -16,10 +21,19 @@ export class FoodProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public photoViewer: PhotoViewer) {
 
+=======
+  // _imageViewerCtrl: ImageViewerController;
+  // images = ['food (1).jpg', 'food (2).jpg', 'food (3).jpg', 'food (4).jpg'];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+   //  imageViewerCtrl: ImageViewerController
+  	// this._imageViewerCtrl = imageViewerCtrl;
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FoodProfilePage');
+<<<<<<< HEAD
     this.slides.lockSwipes(true);
     this.picslider.lockSwipes(false)
   }
@@ -28,6 +42,11 @@ export class FoodProfilePage {
     // love react
 
     buttonIcon: string = "ios-heart-outline";
+=======
+  }
+
+  buttonIcon: string = "ios-heart-outline";
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
       
       toggleIcon(getIcon: string) {
         
@@ -40,6 +59,7 @@ export class FoodProfilePage {
       
     }
   
+<<<<<<< HEAD
     // Ate option
 
     disbutton: string = "disabledbtn";
@@ -100,4 +120,6 @@ export class FoodProfilePage {
         this.rate = null;
         this.slides.slideTo(1);
     }
+=======
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 }

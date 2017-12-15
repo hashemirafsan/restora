@@ -1,18 +1,29 @@
+<<<<<<< HEAD
 <ion-header>
   <ion-navbar>
+=======
+<ion-header *ngIf="!searchBar">
+  <ion-navbar >
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Dashboard</ion-title>
 
      <ion-buttons end>
+<<<<<<< HEAD
       <button ion-button icon-only>
         <ion-icon name="more"></ion-icon>
+=======
+      <button ion-button icon-only (tap)="openSearch()">
+        <ion-icon name="search"></ion-icon>
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
+<<<<<<< HEAD
 
 <ion-content padding class="card-background-page">
   <!-- <ion-searchbar placeholder="Restaurant, Food etc..."></ion-searchbar>
@@ -58,6 +69,66 @@
 
 
   <div class="dashboard">
+=======
+<ion-header *ngIf="searchBar">
+  <ion-navbar>
+    <ion-searchbar placeholder="Restaurant, Food etc..." (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="card-background-page" padding>
+
+  <div class="dashboard" *ngIf="searchBar">
+    <ion-fab bottom right edge (tap)="openSearch()">
+      <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+    </ion-fab>
+    <div class="restaurant">
+      <h1>Restaurant</h1>
+      <ion-slides >
+        <ion-slide id="check" *ngFor="let item of restaurants" (tap)="goRestaurant(item.id)">
+          <ion-card>
+            <img src="{{ item?.restaurant_photo[0]?.url }}">
+            <ion-card-content>
+              <ion-card-title>
+               {{item.restaurant_name}}
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div class="food">
+      <h1>Food</h1>
+      <ion-slides >
+        <ion-slide id="check" *ngFor="let item of food" (tap)="goFood(item.id)">
+          <ion-card>
+            <img src="assets/images/FoodCat/Soup.png">
+            <ion-card-content>
+              <ion-card-title>
+               {{item.food_name}}
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+      
+  </div>
+  
+  <div class="dashboard" *ngIf="!searchBar">
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <div class="dashboard-title">
       <p>{{user.first_name}}'s Activity</p>
       <p><ion-icon name="pin"></ion-icon> <span>{{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
@@ -77,8 +148,120 @@
       </li>
     </ul>
   </div>
+<<<<<<< HEAD
   <div class="newsfeed">
+=======
+
+  <section>
+      <div class="food_header">
+        <h2>
+          <span>Food</span>
+        </h2>
+      </div>
+  </section>
+
+  <section class="news_feed" *ngIf="!searchBar">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              price : 150tk
+            </p>
+            <p>
+              Chicken Tikka
+            </p>
+            <p>
+              Panshi Restaurant
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              price : 150tk
+            </p>
+            <p>
+              Chicken Masala
+            </p>
+            <p>
+              Panshi Restaurant
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row> 
+    </ion-grid>
+    <div>
+      <div col-md-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div col-md-6>
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            Rafsan
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      
+    </div>
+  </section> 
+ 
+  
+ <!--  <div class="newsfeed" *ngIf="!searchBar">
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <div class="newsfeed-item">
+      <div class="part-1-header">
+        <div class="img">
+          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
+        </div>
+      </div>
+      <div class="title text-center">
+         <p class="author-name">Rashemi Jani</p>
+      </div>
+      <div class="part-2-details">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+      </div>
+      <div class="part-3-footer">
+        <ion-icon name="alert"></ion-icon>
+        <ion-icon name="alert"></ion-icon>
+      </div>
+    </div>
+
+    <div class="newsfeed-item">
+<<<<<<< HEAD
+=======
+      <h1>Header</h1>
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
       <div class="part-1-header">
         <div class="img">
           <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
@@ -113,25 +296,11 @@
         <ion-icon name="alert"></ion-icon>
       </div>
     </div>
-
-    <div class="newsfeed-item">
-      <div class="part-1-header">
-        <div class="img">
-          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
-        </div>
-      </div>
-      <div class="title text-center">
-         <p class="author-name">Rashemi Jani</p>
-      </div>
-      <div class="part-2-details">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
-      </div>
-      <div class="part-3-footer">
-        <ion-icon name="alert"></ion-icon>
-        <ion-icon name="alert"></ion-icon>
-      </div>
-    </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div> -->
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 
 
 </ion-content>

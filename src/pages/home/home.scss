@@ -1,7 +1,54 @@
 page-home {
 	.card-background-page {
+<<<<<<< HEAD
 	  font-family: $primary-font;
 	  	.dashboard {
+=======
+	  /*background: url('../../assets/images/dashboard.gif') no-repeat center;*/
+	  font-family: $primary-font;
+	  	#check {
+	  		width: 90% !important;
+	  	}
+
+	  	/*.scroll-content.scroll-content.scroll-content {
+			padding: 0px;
+	    	
+	  	}*/
+	  	.food_header {
+	  		span {
+			 /* position: relative;*/
+			  display: block;
+			  background: orange;
+			  text-align: center;
+			}
+			/*span:before {
+				content: "";
+				  position: absolute;
+				  bottom: 0;
+				  top: 0;
+				  background: orange;
+				  width: 9999px
+			}
+			span:before {
+			  right: 100%; 
+			}
+			span:after {
+				content: "";
+				position: absolute;
+				display: block;
+				border: 0.7em solid orange;
+			}
+			span:after {
+				  right: -1em;
+				  top: 0;
+				  border-left-width: 0.7em;
+				  border-right-color: transparent;
+			}*/
+	  	}
+	  
+	  	.dashboard {
+			z-index: 9999;
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 		  	padding: 10px 10px;
 		  	overflow: hidden;
 		  	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);

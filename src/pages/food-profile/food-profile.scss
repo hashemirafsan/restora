@@ -5,6 +5,10 @@ page-food-profile {
 
 		 	.profile{
 		 		height: 30%;
+<<<<<<< HEAD
+=======
+		 		background: #e6e6e6;
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 		 		ion-slide{
 		 			width: 100%;
 		 			margin-top:-25%;
@@ -24,9 +28,34 @@ page-food-profile {
 				      position: absolute;
 					  
 				    }
+<<<<<<< HEAD
 
 			    }			    
 		  }
+=======
+			    }
+		 	
+	.reactBar{
+		width: 90%;
+		margin: auto;
+		ul.react {
+		  		display: flex;
+		  		justify-content: space-around;
+		  		li {
+		  			text-align: center;
+		  			button {
+						font-size: 30px;
+						color:#000;
+		  			}
+		  			p {
+		  				font-weight: Bold;
+		  				font-size: 16px;
+		  			}
+		  		}
+		  	}
+	}
+	}
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 
 	.dashboard {
 		  	padding: 10px 10px;
@@ -35,23 +64,33 @@ page-food-profile {
 		  	overflow: hidden;
 		  	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 		    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
 			text-align: left;
 				.center {			    	
 			  		text-align: center;	
 
 			  		.price{
+=======
+			    text-align: left;
+			    .dashboard-title {
+			    	.price{
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 						font-weight: bold;
 			    	}
 			    	.ios-heart-outline{
 			    		color: #000;
 			    		font-size: 15px;
 			    		background: none;
+<<<<<<< HEAD
 			    		margin-bottom: 7%;
+=======
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 			    	}
 			    	.ios-heart{
 						color: red;
 			    		font-size: 15px;
 			    		background: none;
+<<<<<<< HEAD
 			    		margin-bottom: 7%;
 			    	}
 				    .disabledbtn{
@@ -71,6 +110,14 @@ page-food-profile {
 		
 			  	}
 			    .dashboard-title {			    	
+=======
+			    	}
+				    .ate{
+			    		color: #000;
+			    		font-size: 10px;
+			    		padding: 0px 20px;			    		
+			    	}
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 			    	display: flex;
 			    	justify-content: space-between;
 			    }
@@ -88,7 +135,10 @@ page-food-profile {
 		  		display: flex;
 		  		justify-content: space-around;
 		  		li {
+<<<<<<< HEAD
 		  			list-style: none;
+=======
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 		  			text-align: center;
 		  			span {
 						font-size: 30px;
@@ -154,6 +204,7 @@ page-food-profile {
 						}
 					input{
 						margin-bottom: 5px;
+<<<<<<< HEAD
 						width: 80%;
 						height: 60px;
 						border:1px solid gray;
@@ -164,6 +215,8 @@ page-food-profile {
 						height: 100px;
 						border:1px solid gray;
 						text-align: center;
+=======
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 					}
 						ul {
 						  padding: 0px;
@@ -178,6 +231,7 @@ page-food-profile {
 						  }
 						}
 					.rated{
+<<<<<<< HEAD
 						.set{
 							margin-left:40%;
 							margin-bottom:-5%;						
@@ -197,6 +251,19 @@ page-food-profile {
 							width: 80%;
 						}
 						
+=======
+						fieldset{							
+							text-align: center;
+							font-size: 15px;
+						}
+						#title{
+							position: relative;
+						}
+						#select{
+							float: right;
+							right: 0;
+						}
+>>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 					}
 					p{
 						font-size: 15px;

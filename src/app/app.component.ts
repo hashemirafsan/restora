@@ -31,6 +31,12 @@ import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../pages/food-profile/food-profile';
 
+import { FoodsPage } from '../pages/foods/foods';
+import { RestaurantsPage } from '../pages/restaurants/restaurants';
+import { SettingsPage } from '../pages/settings/settings';
+import { RecommendedPage } from '../pages/recommended/recommended';
+
+
 import axios from 'axios';
 import _ from 'lodash';
 import { route } from '../assets/Auth/Auth';
@@ -49,6 +55,9 @@ export class MyApp {
   public getData;
   map: GoogleMap;
 
+
+  public location = {};
+
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public statusBar: StatusBar, private googlePlus: GooglePlus, public splashScreen: SplashScreen, private geolocation: Geolocation) {
@@ -57,6 +66,12 @@ export class MyApp {
     this.geolocation.getCurrentPosition().then((position) => {
       this.getData = "Can't find you!";
       console.log(position)
+
+
+      this.location = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }
 
       this.nativeGeocoder.reverseGeocode(position.coords.latitude, position.coords.longitude)
         .then((result: NativeGeocoderReverseResult) => this.getData = result)
@@ -72,10 +87,15 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Tabs', component:TabsPage },
       { title: 'Profile', component: ProfilePage},
+
+      { title: 'Foods', component: FoodsPage},
+      { title: 'Restaurant', component: RestaurantsPage },
+      { title: 'Settings', component: SettingsPage },
+      { title: 'Recommended', component: RecommendedPage }
+
     ];
 
   }
-
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -83,6 +103,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.rootPage = HomePage;
+
       // this.googlePlus.trySilentLogin({
       //   webClientId: '594029952654-45s1j3995chh2jj7ogq3fdj4vbuqogv1.apps.googleusercontent.com'
       // })
