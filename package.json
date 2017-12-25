@@ -28,12 +28,14 @@
     "@ionic-native/keyboard": "^4.4.2",
     "@ionic-native/native-geocoder": "^4.4.2",
     "@ionic-native/native-storage": "^4.2.1",
+    "@ionic-native/photo-viewer": "^4.5.0",
     "@ionic-native/sim": "^4.2.1",
     "@ionic-native/splash-screen": "3.12.1",
     "@ionic-native/status-bar": "3.12.1",
     "@ionic/cloud-angular": "^0.12.0",
     "@ionic/storage": "2.0.1",
     "axios": "^0.16.2",
+    "com-sarriaroman-photoviewer": "^1.1.11",
     "cordova": "^7.1.0",
     "cordova-android": "6.3.0",
     "cordova-browser": "5.0.1",
@@ -90,6 +92,8 @@
       "cordova-plugin-googlemaps": {
         "API_KEY_FOR_ANDROID": "AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0"
       },
+      "cordova-plugin-nativegeocoder": {},
+      "com-sarriaroman-photoviewer": {},
       "cordova-plugin-nativegeocoder": {}
     },
     "platforms": [
@@ -98,3 +102,4 @@
     ]
   }
 }
+

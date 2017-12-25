@@ -5,6 +5,7 @@ import { route } from '../../assets/Auth/Auth';
 import axios from 'axios';
 import { ToastController } from 'ionic-angular';
 
+
 @Component({
   selector: 'page-restaurant-profile',
   templateUrl: 'restaurant-profile.html',
@@ -12,6 +13,7 @@ import { ToastController } from 'ionic-angular';
 
 export class RestaurantProfilePage {
    @ViewChild(Slides) slides: Slides;
+
 
    public restaurant_details = {};
 
@@ -41,49 +43,68 @@ export class RestaurantProfilePage {
         .catch((err) => {
           console.log(err)
         })
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantProfilePage');
     this.slides.lockSwipes(true);	
   }
-  margin = "-30%";
-  expresions = null;
-  rate = null;
-  onModelChange(rate){
-  		this.margin = "0";	
-  		let button = rate;
-  		this.expresions = ["","Hated it!","Disliked it!","It's ok","Liked it!","Loved it!"] ; 
-  				
-  }
 
-  submitbutton1(){
-  	// slide
-  	this.slides.lockSwipes(false);
-    this.slides.slideNext();
-    this.slides.lockSwipeToNext(true);
-  }
+  // Ate option
+
+    disbutton: string = "disabledbtn";
+      
+      togglebtn(getbtn: string) {
+        
+      if (this.disbutton === 'activebtn') {
+        this.disbutton = "disabledbtn";
+      }
+      else if (this.disbutton === 'disabledbtn') {
+        this.disbutton = "activebtn";
+      }
+      
+    }
 
 
-  submitbutton2(rate,title,desc){
-  	// update review
-  	console.log("done "+rate+" "+title+" "+desc);
-    this.rate = rate;
-  	// slide
-  	this.slides.lockSwipes(false);
-    this.slides.slideNext(); 
-    this.slides.lockSwipes(true); 	
-  }
+   //rating
+    margin = "-15%";
+    expresions = null;
+    rate = null;
+    onModelChange(rate){
+        this.margin = "0";  
+        let button = rate;
+        this.expresions = ["","Hated it!","Disliked it!","It's ok","Liked it!","Loved it!"] ; 
+            
+    }
 
-  edit(){
-      this.slides.slideTo(1);
-  }
+    submitbutton1(){
+      // slide
+      this.slides.lockSwipes(false);
+      this.slides.slideNext();
+      this.slides.lockSwipeToNext(true);
+    }
 
-  delete(){
-      this.rate = null;
-      this.slides.slideTo(1);
-  }
 
+    submitbutton2(rate,title,desc){
+      // update review
+      console.log("done "+rate+" "+title+" "+desc);
+      this.rate = rate;
+      // slide
+      this.slides.lockSwipes(false);
+      this.slides.slideNext(); 
+      this.slides.lockSwipes(true);   
+    }
+
+    edit(){
+        this.slides.slideTo(1);
+    }
+
+    delete(){
+        this.rate = null;
+        this.slides.slideTo(1);
+    }
+  
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
@@ -92,5 +113,6 @@ export class RestaurantProfilePage {
     });
     toast.present();
   }
+
 
 }

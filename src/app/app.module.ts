@@ -32,6 +32,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 // import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
@@ -49,11 +50,11 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     ProfilePage,
     RestaurantProfilePage,
     FoodProfilePage,
+    FoodProfilePage,
     FoodsPage,
     RestaurantsPage,
     SettingsPage,
     RecommendedPage
-
   ],
   imports: [
     BrowserModule,
@@ -80,7 +81,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     RestaurantsPage,
     SettingsPage,
     RecommendedPage
-    
+
   ],
   providers: [
     StatusBar,
@@ -91,6 +92,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     Geolocation,
     NativeGeocoder,
     GoogleMaps,
+    PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
