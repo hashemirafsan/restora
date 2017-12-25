@@ -1,75 +1,18 @@
-<<<<<<< HEAD
-<ion-header>
-  <ion-navbar>
-=======
 <ion-header *ngIf="!searchBar">
   <ion-navbar >
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Dashboard</ion-title>
 
      <ion-buttons end>
-<<<<<<< HEAD
-      <button ion-button icon-only>
-        <ion-icon name="more"></ion-icon>
-=======
       <button ion-button icon-only (tap)="openSearch()">
         <ion-icon name="search"></ion-icon>
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<<<<<<< HEAD
-
-<ion-content padding class="card-background-page">
-  <!-- <ion-searchbar placeholder="Restaurant, Food etc..."></ion-searchbar>
-
-  <ion-card>
-    <img src="../../assets/images/background.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/images/background.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/images/background.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/images/background.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/images/background.jpg"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
-  </ion-card> -->
-  <!-- <div class="temp">
-    <h1>temporary data</h1>
-    <p>name : {{name}}</p>  
-    <p>email : {{email}}</p>  
-    <p>details : {{details}}</p>  
-    <p>restaurant Cat : {{restCatId}}</p> 
-    <p>Restaurant : {{restId}}</p> 
-    <p>food Cat : {{foodCatId}}</p> 
-  </div> -->
-
-
-  <div class="dashboard">
-=======
 <ion-header *ngIf="searchBar">
   <ion-navbar>
     <ion-searchbar placeholder="Restaurant, Food etc..." (ionInput)="getItems($event)"></ion-searchbar>
@@ -128,7 +71,6 @@
   </div>
   
   <div class="dashboard" *ngIf="!searchBar">
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <div class="dashboard-title">
       <p>{{user.first_name}}'s Activity</p>
       <p><ion-icon name="pin"></ion-icon> <span>{{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
@@ -148,9 +90,6 @@
       </li>
     </ul>
   </div>
-<<<<<<< HEAD
-  <div class="newsfeed">
-=======
 
   <section>
       <div class="food_header">
@@ -238,7 +177,6 @@
  
   
  <!--  <div class="newsfeed" *ngIf="!searchBar">
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     <div class="newsfeed-item">
       <div class="part-1-header">
         <div class="img">
@@ -256,12 +194,8 @@
         <ion-icon name="alert"></ion-icon>
       </div>
     </div>
-
     <div class="newsfeed-item">
-<<<<<<< HEAD
-=======
       <h1>Header</h1>
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
       <div class="part-1-header">
         <div class="img">
           <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
@@ -278,7 +212,6 @@
         <ion-icon name="alert"></ion-icon>
       </div>
     </div>
-
     <div class="newsfeed-item">
       <div class="part-1-header">
         <div class="img">
@@ -296,11 +229,7 @@
         <ion-icon name="alert"></ion-icon>
       </div>
     </div>
-<<<<<<< HEAD
-  </div>
-=======
   </div> -->
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 
 
 </ion-content>

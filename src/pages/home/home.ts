@@ -4,10 +4,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import { route } from '../../assets/Auth/Auth';
 import { Geolocation } from '@ionic-native/geolocation';
-<<<<<<< HEAD
-=======
 import { LoadingController } from 'ionic-angular';
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 import {
  GoogleMaps,
  GoogleMap,
@@ -19,12 +16,9 @@ import {
 } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 
-<<<<<<< HEAD
-=======
 import { RestaurantProfilePage } from '../restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../food-profile/food-profile';
 
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -41,11 +35,6 @@ export class HomePage {
   public userInfo = {};
   public user = {};
   public getData = {};
-<<<<<<< HEAD
-
-
-  constructor(public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
-=======
   public searchBar = false;
   public restaurants = [];
   public food = [];
@@ -54,7 +43,6 @@ export class HomePage {
 
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
     
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
     axios
       .get(route.app_url + '/user-info/1')
       .then(res => {
@@ -67,16 +55,12 @@ export class HomePage {
 
     this.geolocation.getCurrentPosition().then((position) => {
       this.getData = "Can't find you!";
-<<<<<<< HEAD
-      console.log(position)
-=======
       console.log('pos',position)
 
       this.location = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       }
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
 
       this.nativeGeocoder.reverseGeocode(position.coords.latitude, position.coords.longitude)
         .then((result: NativeGeocoderReverseResult) => this.getData = result)
@@ -89,8 +73,6 @@ export class HomePage {
     });
   }
 
-<<<<<<< HEAD
-=======
   goFood(id) {
     this.navCtrl.push(FoodProfilePage, {
       food_id: id
@@ -121,7 +103,6 @@ export class HomePage {
         })
   }
 
->>>>>>> 25eddfacf57c3d9fc8ae2028ac5cb76604055f61
   ionViewDidLoad(){
     this.name = this.navParams.get('name');
     this.email = this.navParams.get('email');
@@ -135,6 +116,6 @@ export class HomePage {
        this.viewCtrl.showBackButton(false);
   }
 
-  	  
+      
 
 }
