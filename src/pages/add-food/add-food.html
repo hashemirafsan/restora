@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Food</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list class="list">
+		  <ion-item class="title">
+		    <ion-input type="text" placeholder="Food Title"></ion-input>
+		  </ion-item>
+		  
+		  
+		  <ion-item>
+		    <ion-label>Price</ion-label>
+		    <ion-input type="text"></ion-input>
+		  </ion-item>
+
+		   <ion-item>
+		    <ion-label>Restaurant</ion-label>
+		    <ion-input type="text"></ion-input>
+		  </ion-item>
+
+		  <ion-item class="add-img">
+		  	<img src="../assets/images/Intro/gallery.png" (tap)="AddImage(event)">
+		  	<p>Add Image</p>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label>Select Category</ion-label>
+		    <ion-select [(ngModel)]="cat">
+		      <ion-option value="a">Indian</ion-option>
+		      <ion-option value="b">Thai</ion-option>
+		      <ion-option value="c">Chineese</ion-option>
+		      <ion-option value="d">Fast Food</ion-option>
+		      <ion-option value="e">Soup</ion-option>
+		      <ion-option value="f">Drink</ion-option>
+		    </ion-select>
+		  </ion-item>
+
+
+		  <ion-item class="icon-img">
+			  <ion-slides class="image-slider" loop="true" slidesPerView="2" #picslider>
+	          	<ion-slide *ngFor="let img of images">
+	            <img src="assets/images/FoodItem/{{img}}" class="thumb-img" 
+	            (tap)="photoViewerfunc(img)"/>
+	          	</ion-slide>
+	          </ion-slides>		  
+		  </ion-item>
+
+	</ion-list>
+
+	<ion-footer class="bar-assertive">
+		<button ion-button class="button-positive" class="left">DisCard</button>
+		<button ion-button class="button-positive" class="right">Publish</button>
+	</ion-footer>
+</ion-content>

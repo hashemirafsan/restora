@@ -35,7 +35,7 @@ import { FoodsPage } from '../pages/foods/foods';
 import { RestaurantsPage } from '../pages/restaurants/restaurants';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
-
+import { AddFoodPage } from '../pages/add-food/add-food';
 
 import axios from 'axios';
 import _ from 'lodash';
@@ -50,7 +50,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = FoodProfilePage;
+  rootPage: any = AddFoodPage;
 
   public getData;
   map: GoogleMap;

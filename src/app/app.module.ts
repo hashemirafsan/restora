@@ -21,6 +21,7 @@ import { FoodsPage } from '../pages/foods/foods';
 import { RestaurantsPage } from '../pages/restaurants/restaurants';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
+import { AddFoodPage } from '../pages/add-food/add-food';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-// import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [    
@@ -54,7 +54,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     FoodsPage,
     RestaurantsPage,
     SettingsPage,
-    RecommendedPage
+    RecommendedPage,
+    AddFoodPage
   ],
   imports: [
     BrowserModule,
@@ -80,8 +81,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     FoodsPage,
     RestaurantsPage,
     SettingsPage,
-    RecommendedPage
-
+    RecommendedPage,
+    AddFoodPage
   ],
   providers: [
     StatusBar,

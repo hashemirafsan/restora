@@ -1,0 +1,51 @@
+page-add-food {
+	.list{
+		color:gray;
+		.title{
+			font-size: 20px;
+			border-bottom: 1px solid #000;
+		}
+		ion-label{
+			font-size: 14px;
+			word-spacing: 2px;
+		}
+		
+
+
+		.add-img{
+				img{
+				width: 80px;
+				height: 80px;
+				margin: auto;
+			    }
+		}
+
+		.icon-img{
+			ion-slide{
+				img{
+				width: 160px;
+				height: 80px;
+				overflow: hidden;
+				display: flex;
+				justify-content:space-between;
+				margin-left: 10px;
+			    }
+
+			}
+		}
+	}
+
+	ion-footer{
+		border:none;
+		.right{
+			float: right;
+			margin-right: 30px;
+			margin-bottom: 20px;
+		}
+		.left{
+			float: left;
+			margin-left: 30px;
+			margin-bottom: 20px;
+		}
+	}
+}
