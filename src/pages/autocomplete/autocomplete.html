@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Enter Restaurant Name</ion-title>
-    <ion-searchbar [(ngModel)]="inputs" [showCancelButton]="true" (ionCancel)="dismiss()" (ngModelChange)="updateSearch(inputs)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="inputs" [showCancelButton]="true" (ionCancel)="dismiss()" (ngModelChange)="updateSearch(inputs)">{{inputs}}</ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content>

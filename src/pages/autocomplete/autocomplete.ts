@@ -19,7 +19,6 @@ export class AutocompletePage {
   private stmt = true;
 
   constructor (public viewCtrl: ViewController,private params: NavParams) {
-     this.inputs = this.params.get('inputs');
      axios
       .get(route.app_url + '/all-restaurant')
       .then(res => {

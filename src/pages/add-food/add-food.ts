@@ -28,7 +28,7 @@ export class AddFoodPage{
 
     // restaurant search
    showAddressModal () {
-    let modal = this.modalCtrl.create(AutocompletePage,{inputs:'inputs'});
+    let modal = this.modalCtrl.create(AutocompletePage);
 
     modal.onDidDismiss(data => {
       this.inputs = data;

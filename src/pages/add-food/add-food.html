@@ -20,8 +20,8 @@
 		  </ion-item>
 
 		   <ion-item>
-		    <ion-label>Restaurant</ion-label>
-		    <ion-input type="text"  (input)="showAddressModal(inputs)" value="{{inputs}}" [([ngModel]="inputs"></ion-input>
+		    <ion-label (tap)="showAddressModal(inputs)">Restaurant</ion-label>
+		    <ion-input type="text"  (tap)="showAddressModal()" value="{{inputs}}" [(ngModel)]="inputs"></ion-input>
 		  </ion-item>
 
 		  <ion-item class="add-img">
