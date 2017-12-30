@@ -21,11 +21,11 @@
 
 		   <ion-item>
 		    <ion-label>Restaurant</ion-label>
-		    <ion-input type="text"></ion-input>
+		    <ion-input type="text"  (input)="showAddressModal(inputs)" value="{{inputs}}" [([ngModel]="inputs"></ion-input>
 		  </ion-item>
 
 		  <ion-item class="add-img">
-		  	<img src="../assets/images/Intro/gallery.png" (tap)="AddImage(event)">
+		  	<img src="../assets/images/Intro/gallery.png" (tap)="openImagePicker()">
 		  	<p>Add Image</p>
 		  </ion-item>
 
@@ -44,9 +44,9 @@
 
 		  <ion-item class="icon-img">
 			  <ion-slides class="image-slider" loop="true" slidesPerView="2" #picslider>
-	          	<ion-slide *ngFor="let img of images">
-	            <img src="assets/images/FoodItem/{{img}}" class="thumb-img" 
-	            (tap)="photoViewerfunc(img)"/>
+	          	<ion-slide *ngFor="let photo of photos">
+	            <img src="assets/images/FoodItem/{{photo}}" class="thumb-img" 
+	            (tap)="photoViewerfunc(photo)"/>
 	          	</ion-slide>
 	          </ion-slides>		  
 		  </ion-item>

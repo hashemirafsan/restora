@@ -36,6 +36,7 @@ import { RestaurantsPage } from '../pages/restaurants/restaurants';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
+import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 
 import axios from 'axios';
 import _ from 'lodash';
