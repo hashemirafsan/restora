@@ -21,6 +21,9 @@ import { FoodsPage } from '../pages/foods/foods';
 import { RestaurantsPage } from '../pages/restaurants/restaurants';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
+import { AddFoodPage } from '../pages/add-food/add-food';
+import { AutocompletePage } from '../pages/autocomplete/autocomplete';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +36,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-// import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Crop } from '@ionic-native/crop';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [    
@@ -54,13 +59,15 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     FoodsPage,
     RestaurantsPage,
     SettingsPage,
-    RecommendedPage
+    RecommendedPage,
+    AddFoodPage,
+    AutocompletePage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    Ionic2RatingModule,
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,8 +87,9 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     FoodsPage,
     RestaurantsPage,
     SettingsPage,
-    RecommendedPage
-
+    RecommendedPage,
+    AddFoodPage,
+    AutocompletePage
   ],
   providers: [
     StatusBar,
@@ -93,6 +101,9 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
     NativeGeocoder,
     GoogleMaps,
     PhotoViewer,
+    ImagePicker,
+    Crop,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
