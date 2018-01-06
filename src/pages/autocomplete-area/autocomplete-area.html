@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Restaurant Area</ion-title>
+    <ion-searchbar [(ngModel)]="inputs" [showCancelButton]="true" (ionCancel)="dismiss()" (ngModelChange)="updateSearch(inputs)">{{inputs}}</ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-list class="list">
+  <ion-item *ngFor="let item of updatedRestName" (tap)="chooseItem(item.restaurant_name)">
+
+    	<ion-thumbnail item-start>
+      	<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
+	    </ion-thumbnail>
+	    <h2>{{ item.restaurant_name}}</h2>    
+	    <p>{{ item.address_line_1 }}, {{ item.area?.area_name}}, {{item.zila?.zila_name}}</p>
+   
+
+  </ion-item>
+</ion-list>
+
+</ion-content>

@@ -23,6 +23,10 @@ import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
+import { AddRestaurantPage } from '../pages/add-restaurant/add-restaurant';
+import { AutocompleteAddressPage } from '../pages/autocomplete-address/autocomplete-address';
+import { AutocompleteAreaPage } from '../pages/autocomplete-area/autocomplete-area';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -61,7 +65,10 @@ import { Camera } from '@ionic-native/camera';
     SettingsPage,
     RecommendedPage,
     AddFoodPage,
-    AutocompletePage
+    AutocompletePage,
+    AddRestaurantPage,
+    AutocompleteAddressPage,
+    AutocompleteAreaPage
   ],
   imports: [
     BrowserModule,
@@ -89,7 +96,10 @@ import { Camera } from '@ionic-native/camera';
     SettingsPage,
     RecommendedPage,
     AddFoodPage,
-    AutocompletePage
+    AutocompletePage,
+    AddRestaurantPage,
+    AutocompleteAddressPage,
+    AutocompleteAreaPage
   ],
   providers: [
     StatusBar,

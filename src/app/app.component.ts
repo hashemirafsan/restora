@@ -37,6 +37,10 @@ import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
+import { AddRestaurantPage } from '../pages/add-restaurant/add-restaurant';
+import { AutocompleteAddressPage } from '../pages/autocomplete-address/autocomplete-address';
+import { AutocompleteAreaPage } from '../pages/autocomplete-area/autocomplete-area';
+
 
 import axios from 'axios';
 import _ from 'lodash';
@@ -51,7 +55,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AddFoodPage;
+  rootPage: any = AddRestaurantPage;
 
   public getData;
   map: GoogleMap;

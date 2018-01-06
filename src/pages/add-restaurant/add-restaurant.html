@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Restaurant</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list class="list">
+		  <ion-item class="title">
+		    <ion-input type="text" placeholder="Restaurant Name"></ion-input>
+		  </ion-item>
+		  
+
+		  <ion-item>
+		    <ion-label (tap)="showAddressModal(inputs)">Area</ion-label>
+		    <ion-input type="text"  (tap)="showAreaModal()" value="{{inputs}}" [(ngModel)]="inputs"></ion-input>
+		  </ion-item>
+
+
+		  <ion-item>
+		    <ion-label (tap)="showAddressModal(inputs)">Address</ion-label>
+		    <ion-input type="text"  (tap)="showAddressModal()" value="{{inputs}}" [(ngModel)]="inputs"></ion-input>
+		  </ion-item>
+			
+		  <ion-item>
+		    <ion-label>Phone</ion-label>
+		    <ion-input type="number" [(ngModel)]="phone"></ion-input>
+		  </ion-item>
+	
+
+		  <ion-item>
+		    <ion-label>Select Category</ion-label>
+		    <ion-select [(ngModel)]="cat">
+		      <ion-option value="a">Indian</ion-option>
+		      <ion-option value="b">Thai</ion-option>
+		      <ion-option value="c">Chineese</ion-option>
+		      <ion-option value="d">Fast Food</ion-option>
+		      <ion-option value="e">Soup</ion-option>
+		      <ion-option value="f">Drink</ion-option>
+		    </ion-select>
+		  </ion-item>
+
+	</ion-list>
+
+	<ion-footer class="bar-assertive">
+		<button ion-button class="button-positive" class="left">DisCard</button>
+		<button ion-button class="button-positive" class="right">Publish</button>
+	</ion-footer>
+</ion-content>
