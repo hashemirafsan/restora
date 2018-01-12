@@ -8,7 +8,7 @@ const oauth_credentials = {
 }
 
 const route = {
-	// app_url  : 	'http://server.dev',
+	// app_url  : 	'http://server.lab',
 	app_url : 'https://api.reviewsfood.com/',
 	get oauth_token(){
 		return this.app_url + '/oauth/token'

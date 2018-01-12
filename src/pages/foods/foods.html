@@ -11,5 +11,30 @@
 
 
 <ion-content padding>
-	<h1>All Foods</h1>
+	<div *ngIf="loading" class="loading" text-center>
+        <span>Loading</span>
+      <span class="l-1"></span>
+      <span class="l-2"></span>
+      <span class="l-3"></span>
+      <span class="l-4"></span>
+      <span class="l-5"></span>
+      <span class="l-6"></span>
+    </div>
+
+    <div *ngIf="foods">
+      <div col-md-6 *ngFor="let item of foods" (tap)="goFood(item.id)">
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            {{ item?.food?.food?.food_name }}
+            </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
 </ion-content>

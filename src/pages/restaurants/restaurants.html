@@ -10,12 +10,36 @@
   	<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Restaurants</ion-title>
+    <ion-title>All Restaurants</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-	<h1>All Restaurants</h1>
-</ion-content>
+  <ion-content>
+    <div *ngIf="loading" class="loading" text-center>
+        <span>Loading</span>
+      <span class="l-1"></span>
+      <span class="l-2"></span>
+      <span class="l-3"></span>
+      <span class="l-4"></span>
+      <span class="l-5"></span>
+      <span class="l-6"></span>
+    </div>
+
+    <div *ngIf="restaurants">
+      <div col-md-6 *ngFor="let item of restaurants" (tap)="goRestaurant(item.id)">
+        <ion-card>
+          <img src="assets/images/FoodCat/Soup.png">
+          <ion-card-content>
+            <ion-card-title>
+            {{ item?.restaurant_name }}
+            </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>
