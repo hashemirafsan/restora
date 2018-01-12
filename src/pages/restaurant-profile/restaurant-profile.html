@@ -3,7 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title> {{ restaurant_details?.restaurant_name }} </ion-title>
+
   </ion-navbar>
 </ion-header>
 
@@ -13,22 +15,43 @@
 			<p class="space"></p>			
 		</div>
 		<div class="profile-img">
-			<img src="../assets/images/RestaurantProfile/restaurant-pro1.jpg">
+
+			<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
+
 		</div>
 	</div>
 
 
   <div class="dashboard">
+
+    <ion-row>
+
+      <ion-col col-4>
+      </ion-col>
+
+      <ion-col col-4>
+        <div class="center">
+          <ion-badge>FastFood</ion-badge>
+          <ion-badge>Chinese</ion-badge> 
+        </div>
+        <div class="center">
+          <button ion-button outline [class]="disbutton" (tap)="togglebtn()">Visited</button>
+        </div>
+      </ion-col>
+
+      <ion-col col-4 >
+        <div class="right">    
+                <ion-label style="color:#000"> Follow </ion-label>  
+                <ion-toggle  (ngModel)="restaurant_details?.follow" checked="{{ restaurant_details?.follow }}" (tap)="changeToggle(restaurant_details?.follow)" ></ion-toggle>                       </div> 
+
+      </ion-col>
+    </ion-row>
+  
+
+
     <div class="dashboard-title">
       <p>{{ restaurant_details?.restaurant_name }}</p>
       <p><ion-icon name="pin"></ion-icon> <span>{{ restaurant_details?.address_line_1 }}, {{ restaurant_details?.area?.area_name}}, {{restaurant_details?.zila?.zila_name}}</span></p>
-    </div>
-
-    <div>
-      <ion-item>
-        <ion-label style="color: black; text-align: right;"> Follow </ion-label>
-        <ion-toggle  (ngModel)="restaurant_details?.follow" checked="{{ restaurant_details?.follow }}" (tap)="changeToggle(restaurant_details?.follow)" ></ion-toggle>
-      </ion-item>
     </div>
 
     
@@ -38,13 +61,20 @@
         <span>{{ restaurant_details?.restaurantreview?.length }}</span>
         <p>Reviews</p>
       </li>
+       <li>
+        <span>{{ restaurant_details?.avg_rating }}</span>
+        <p>Avg. Rating</p>
+      </li>      
+    </ul>
+
+    <ul class="list-unstyled list-inline activity">
       <li>
         <span>{{ restaurant_details?.restaurant_followers?.length }}</span>
         <p>Followers</p>
       </li>
       <li>
-        <span>{{ restaurant_details?.avg_rating }}</span>
-        <p>Avg. Rating</p>
+        <span>{{ restaurant_details?.restaurant_followers?.visited }}</span>
+        <p>Visitors</p>
       </li>
     </ul>
   </div>
@@ -53,7 +83,7 @@
     <div class="rating-item">
       <div class="part-1-header">
         <div class="img">
-          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" alt="" class="img-responsive center-block">
+          <img src="http://rafsan.pro/wp-content/uploads/2017/09/profile_img.png" class="img-responsive center-block">
         </div>
       </div>
       <div class="title">
@@ -81,7 +111,9 @@
           </ion-slide>
 
           <ion-slide>
-              <input type="text" placeholder="Title" [(ngModel)]="title"/><br/>
+
+              <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input><br/>
+
               <fieldset>
                 <ion-icon name="md-radio-button-off"></ion-icon>
                 <ion-icon name="md-radio-button-on"></ion-icon>
@@ -98,26 +130,37 @@
                 <ion-icon name="md-radio-button-on"></ion-icon>              
               </fieldset> 
               <button ion-button color="dark" outline (tap)="submitbutton2(rate,title,desc)">submit</button>
-          </ion-slide>
+          </ion-slide>   
+                       
 
           <ion-slide class="rated">            
               <fieldset>            
+
                 <ion-icon name="star" *ngIf="rate >= 1"></ion-icon>
                 <ion-icon name="star" *ngIf="rate >= 2"></ion-icon>
                 <ion-icon name="star" *ngIf="rate >= 3"></ion-icon>  
                 <ion-icon name="star" *ngIf="rate >= 4"></ion-icon>
-                <ion-icon name="star" *ngIf="rate == 5"></ion-icon>                                      
+                <ion-icon name="star" *ngIf="rate >= 5"></ion-icon>                                      
               </fieldset>
-              <small>rated on <i>12/12/2017</i></small>
-              <p id="title"><b>{{title}}
-                <ion-icon id="select" name="md-more">
+
+              <ion-icon id="select" name="md-more">
                   <ion-select [(ngModel)]="options">
-                  <ion-option value="e" (tap)="edit()">Edit</ion-option>
-                  <ion-option value="d" (tap)="delete()">Delete</ion-option>
+                    <ion-option value="e" (tap)="edit()">Edit</ion-option>
+                    <ion-option value="d" (tap)="delete()">Delete</ion-option>
                   </ion-select>
-                </ion-icon></b>
-            </p>
+              </ion-icon>  
+
+
+                <ion-icon name="star" *ngIf="rate >= 5">
+                </ion-icon>                                      
+          
+              <small>rated on <i>12/12/2017</i></small>
+              <p id="title">
+                <b>{{title}}
+                </b>
+              </p>
               <p>{{desc}}</p>
+
           </ion-slide>
         </ion-slides>
             
@@ -128,36 +171,69 @@
     </div>
 </div>
 
+
 <div class="reviews">
 	<div class="title">
 		<h3>Highlighted Reviews</h3>
 	</div>
 			<div class="review-1">
 				<div class="profile-img">
-					<img src="../assets/images/RestaurantProfile/restaurant-pro1.jpg" alt="">
+
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
 				</div>
-				<p>Great Restaurant</p>
+				<p>Great Restaurant </p>
+              <fieldset>            
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>  
+                <ion-icon name="star"></ion-icon> 
+                <ion-icon name="star"></ion-icon>                               
+              </fieldset>
+
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 			</div>
 			<div class="review-1">
 				<div class="profile-img">
-					<img src="../assets/images/RestaurantProfile/restaurant-pro1.jpg" alt="">
+
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
 				</div>
-				<p>Great Restaurant</p>
+				<p>Great Restaurant </p><fieldset>            
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>  
+                <ion-icon name="star"></ion-icon> 
+                <ion-icon name="star"></ion-icon>                               
+              </fieldset>
+
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 			</div>
 			<div class="review-1">
 				<div class="profile-img">
-					<img src="../assets/images/RestaurantProfile/restaurant-pro1.jpg" alt="">
+
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
 				</div>
-				<p>Great Restaurant</p>
+				<p>Great Restaurant </p><fieldset>            
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>  
+                <ion-icon name="star"></ion-icon> 
+                <ion-icon name="star"></ion-icon>                               
+              </fieldset>
+
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 			</div>
 			<div class="review-1">
 				<div class="profile-img">
-					<img src="../assets/images/RestaurantProfile/restaurant-pro1.jpg" alt="">
+					<img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg">
 				</div>
-				<p>Great Restaurant</p>
+				<p>Great Restaurant </p><fieldset>            
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>  
+                <ion-icon name="star"></ion-icon> 
+                <ion-icon name="star"></ion-icon>                               
+              </fieldset>
+
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 			</div>
 	<div class="footer">

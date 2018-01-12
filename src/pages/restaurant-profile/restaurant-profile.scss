@@ -32,6 +32,31 @@ page-restaurant-profile {
 		  	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 		    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
 			    text-align: left;
+				.right{
+					float: right;
+				}
+			    .center {		    	
+			  		text-align: center;	
+
+				    .disabledbtn{
+			    		color: #fff;
+			    		font-size: 10px;
+			    		padding: 4px 20px;
+			    		border-radius: 4px;
+			    		background: #424847;
+			    		margin-bottom: 7%;	    		
+			    	}
+			    	.activebtn{
+			    		color: #fff;
+			    		font-size: 10px;
+			    		padding: 4px 20px;
+			    		border-radius: 4px;
+			    		background: #488aff;
+			    		margin-bottom: 7%;				    		
+			    	}
+		
+			  	}
+
 			    .dashboard-title {
 			    	display: flex;
 			    	justify-content: space-between;
@@ -115,6 +140,17 @@ page-restaurant-profile {
 						}
 					input{
 						margin-bottom: 5px;
+						width: 80%;
+						height: 60px;
+						border:1px solid gray;
+						text-align: center;
+					}
+					textarea{
+						width: 80%;
+						height: 100px;
+						border:1px solid gray;
+						text-align: center;
+
 					}
 						ul {
 						  padding: 0px;
@@ -129,6 +165,25 @@ page-restaurant-profile {
 						  }
 						}
 					.rated{
+						.set{
+							margin-left:40%;
+							margin-bottom:-5%;						
+							fieldset{							
+							text-align: center;
+							font-size: 15px;
+							}
+							#select{
+								text-align: end;
+							}
+						}
+						
+						#title{
+							position: relative;
+						}
+						#desc{
+							width: 80%;
+						}
+						
 						fieldset{							
 							text-align: center;
 							font-size: 15px;
@@ -140,6 +195,7 @@ page-restaurant-profile {
 							float: right;
 							right: 0;
 						}
+
 					}
 					p{
 						font-size: 15px;

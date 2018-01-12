@@ -116,6 +116,6 @@ export class HomePage {
        this.viewCtrl.showBackButton(false);
   }
 
-  	  
+      
 
 }

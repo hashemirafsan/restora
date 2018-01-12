@@ -30,10 +30,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../pages/food-profile/food-profile';
+
 import { FoodsPage } from '../pages/foods/foods';
 import { RestaurantsPage } from '../pages/restaurants/restaurants';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
+import { AddFoodPage } from '../pages/add-food/add-food';
+import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 
 import axios from 'axios';
 import _ from 'lodash';
@@ -48,10 +51,11 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = FoodProfilePage;
+  rootPage: any = AddFoodPage;
 
   public getData;
   map: GoogleMap;
+
 
   public location = {};
 
@@ -63,6 +67,7 @@ export class MyApp {
     this.geolocation.getCurrentPosition().then((position) => {
       this.getData = "Can't find you!";
       console.log(position)
+
 
       this.location = {
         lat: position.coords.latitude,
@@ -83,16 +88,15 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Tabs', component:TabsPage },
       { title: 'Profile', component: ProfilePage},
+
       { title: 'Foods', component: FoodsPage},
       { title: 'Restaurant', component: RestaurantsPage },
       { title: 'Settings', component: SettingsPage },
       { title: 'Recommended', component: RecommendedPage }
+
     ];
 
   }
-
-
-
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -100,7 +104,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.rootPage = HomePage;
+
+     //this.rootPage = HomePage;
+
       // this.googlePlus.trySilentLogin({
       //   webClientId: '594029952654-45s1j3995chh2jj7ogq3fdj4vbuqogv1.apps.googleusercontent.com'
       // })
