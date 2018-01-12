@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+import axios from 'axios';
+import _ from 'lodash';
+import { route } from '../../assets/Auth/Auth';
+
+import { FoodProfilePage } from '../food-profile/food-profile';
 
 /**
  * Generated class for the FoodsPage page.
@@ -12,8 +18,52 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'foods.html',
 })
 export class FoodsPage {
+  public foods = [];
+  public loading = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  	this.geolocation.getCurrentPosition().then((position) => {
+      console.log(position)
+
+
+      let location = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }
+
+      this.fetchFoodData(location)
+
+     // resp.coords.latitude
+     // resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
+
+  fetchFoodData(position) {
+  	axios.post(route.app_url + '/get-food-lat-lng', position)
+  		 .then((response) => {
+  		 	response.data.forEach((item) => {
+  		 		item.food_lists.forEach((food) => {
+  		 			let data = {
+	  		 			id: item.id,
+	  		 			name: item.restaurant_name,
+	  		 			food
+	  		 		}
+	  		 		this.foods.push(data)
+  		 		})
+  		 	})
+  		 	this.loading = false;
+  		 })
+  		 .catch((err) => {
+  		 	console.log(err)
+  		 })
+  }
+
+  goFood(id) {
+  	this.navCtrl.push(FoodProfilePage, {
+  		food_id: id
+  	})
   }
 
   ionViewDidLoad() {

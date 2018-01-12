@@ -42,7 +42,8 @@
     "cordova": "^7.1.0",
     "cordova-android": "6.3.0",
     "cordova-browser": "5.0.1",
-    "cordova-plugin-advanced-http": "^1.9.0",
+    "cordova-ios": "4.5.4",
+    "cordova-plugin-advanced-http": "^1.8.1",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-file": "^5.0.0",
@@ -94,7 +95,8 @@
         "GEOLOCATION_USAGE_DESCRIPTION": "To locate your current location"
       },
       "cordova-plugin-googlemaps": {
-        "API_KEY_FOR_ANDROID": "AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0"
+        "API_KEY_FOR_ANDROID": "AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0",
+        "API_KEY_FOR_IOS": "AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0"
       },
       "cordova-plugin-nativegeocoder": {},
       "com-sarriaroman-photoviewer": {},

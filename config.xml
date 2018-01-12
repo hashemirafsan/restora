@@ -108,6 +108,7 @@
     </plugin>
     <plugin name="cordova-plugin-googlemaps" spec="^2.0.11">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyDc9ycddnMbI5Vj6V8VUojgWuGhSbXZFM0" />
     </plugin>
     <plugin name="cordova-plugin-nativegeocoder" spec="^2.0.4" />
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.11" />
