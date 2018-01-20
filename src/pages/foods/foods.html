@@ -22,7 +22,7 @@
     </div>
 
     <div *ngIf="foods">
-      <div col-md-6 *ngFor="let item of foods" (tap)="goFood(item.id)">
+      <div col-md-6 *ngFor="let item of foods" (tap)="goFood(item?.food?.food_id)">
         <ion-card>
           <img src="assets/images/FoodCat/Soup.png">
           <ion-card-content>

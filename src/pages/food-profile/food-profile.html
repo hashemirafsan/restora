@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Vegetable Biryani</ion-title>
+    <ion-title>{{food_details?.food_name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -30,20 +30,21 @@
   <div class="dashboard">
     
     <div class="center">
-          <ion-badge>Indian</ion-badge>
-          <ion-badge>Byriani</ion-badge>         
+          <ion-badge>{{food_details?.foodlist?.food_categories?.food_categories_name}}</ion-badge>     
+    </div>
+    <div>
+        <ion-label style="color:#000"> Ate </ion-label>  
+        <ion-toggle  (ngModel)="food_details?.ate_status" checked="{{ food_details?.ate_status }}" (tap)="changeToggle(restaurant_details?.follow)" ></ion-toggle> 
     </div>
     <div class="center">
-      <button ion-button outline [class]="disbutton" (tap)="togglebtn()">Ate</button>
-    </div>
-    <div class="center">
-        <span class="price">price : 300৳A</span>        
+        <span class="price">price : {{food_details?.price}}৳</span>        
         <button ion-button clear [class]="buttonIcon" (tap)="toggleIcon()"><ion-icon [name]="buttonIcon"></ion-icon></button> 
         
     </div>
 
     <div class="dashboard-title">
-      <p>Panshi</p>
+      <p>{{food_details?.food_name}}</p>
+
       <p>
 
         <ion-icon name="pin"></ion-icon> <span>Jallarpar Road Zindabazar,Sylhet</span>
@@ -52,21 +53,21 @@
     
     <ul class="list-unstyled list-inline activity">
       <li>
-        <span>24</span>
+        <span>{{food_details?.total_review}}</span>
         <p>Reviews</p>
       </li>
       <li>
-        <span>2.4</span>
+        <span>{{food_details?.food_rating_avg}}</span>
         <p>Rated</p>
       </li>
     </ul>
     <ul class="list-unstyled list-inline activity">
       <li>
-        <span>30</span>
+        <span>{{food_details?.total_loved}}</span>
         <p>Loved</p>
       </li>
       <li>
-        <span>30</span>
+        <span>{{food_details?.total_ates}}</span>
         <p>Ate</p>
       </li>
     </ul>

@@ -3,7 +3,7 @@
     <name>Restora</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.0.102:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-navigation href="http://*/*" />
@@ -90,7 +90,7 @@
     <allow-navigation href="http://192.168.0.102:8100" />
     <allow-navigation href="http://192.168.0.102:8101" />
     <engine name="android" spec="6.3.0" />
-    <engine name="browser" spec="5.0.1" />
+    <engine name="browser" spec="5.0.3" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.0" />
@@ -100,7 +100,7 @@
         <variable name="REVERSED_CLIENT_ID" value="594029952654-bh8jg4f3dqghhp1igs0u3jhnoimor5rn.apps.googleusercontent.com" />
     </plugin>
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
-    <plugin name="cordova-plugin-advanced-http" spec="^1.9.0" />
+    <plugin name="cordova-plugin-advanced-http" spec="^1.8.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-keyboard" spec="^1.2.0" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3">

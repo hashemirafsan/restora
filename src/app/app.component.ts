@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
 
-
+import { SelectLocationPage } from '../pages/select-location/select-location';
 import { LoginPage } from '../pages/login/login';
 import { ChooseUserPage } from '../pages/choose-user/choose-user';
 import { AddRegularDetailsPage } from '../pages/add-regular-details/add-regular-details';
@@ -51,7 +51,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SelectLocationPage;
 
   public getData;
   map: GoogleMap;

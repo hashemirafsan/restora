@@ -46,13 +46,14 @@ export class FoodsPage {
   		 	response.data.forEach((item) => {
   		 		item.food_lists.forEach((food) => {
   		 			let data = {
-	  		 			id: item.id,
 	  		 			name: item.restaurant_name,
 	  		 			food
 	  		 		}
 	  		 		this.foods.push(data)
   		 		})
   		 	})
+
+        console.log(this.foods)
   		 	this.loading = false;
   		 })
   		 .catch((err) => {
@@ -61,6 +62,7 @@ export class FoodsPage {
   }
 
   goFood(id) {
+    console.log(id)
   	this.navCtrl.push(FoodProfilePage, {
   		food_id: id
   	})

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddRegularDetailsPage } from '../add-regular-details/add-regular-details';
+import { CreateRestaurantPage } from '../create-restaurant/create-restaurant';
 import axios from 'axios';
 import _ from 'lodash';
 import { route } from '../../assets/Auth/Auth';
@@ -30,6 +31,10 @@ export class ChooseUserPage {
   	this.updateUser(1, 'regular')
   	this.navCtrl.setRoot(AddRegularDetailsPage,this.data);
   }
+    authorityUser() {
+        this.updateUser(1, 'authority');
+        this.navCtrl.setRoot(CreateRestaurantPage, this.data);
+    }
 
   updateUser(user, type) {
     axios

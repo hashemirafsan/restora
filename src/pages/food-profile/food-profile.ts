@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { route } from '../../assets/Auth/Auth';
+import axios from 'axios';
+import { ToastController } from 'ionic-angular';
 // import { ImageViewerController } from 'ionic-img-viewer';
 
 @Component({
@@ -15,9 +18,11 @@ export class FoodProfilePage {
   @ViewChild(Slides) picslider: Slides;
 
   images = ['food (1).jpg', 'food (2).jpg', 'food (3).jpg', 'food (4).jpg'];
+  public food_details = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public photoViewer: PhotoViewer) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams,public photoViewer: PhotoViewer,public toastCtrl: ToastController) {
+    console.log('food_id', this.navParams.data.food_id)
+    this.getFoodData(this.navParams.data.food_id)
   }
 
   ionViewDidLoad() {
@@ -27,20 +32,42 @@ export class FoodProfilePage {
     this.picslider.lockSwipes(false)
   }
 
+  getFoodData(food_id) {
+    axios.get(route.app_url + '/get-food-by-id/' + food_id + '/' + 1)
+         .then((response) => {
+            this.food_details = response.data
+            this.buttonIcon = response.data.loved_status ? 'ios-heart-outline' : 'ios-heart'
+         })
+         .catch((err) => {
+            console.log(err)
+         })
+  }
+
 
     // love react
 
     buttonIcon: string = "ios-heart-outline";
 
+    changeToggle() {
+      axios
+        .get(route.app_url + '/food-ate-unate/' + this.navParams.data.food_id + '/' + 1)
+        .then((response) => {
+          this.getFoodData(this.navParams.data.food_id)
+          this.presentToast(response.data.message)
+        })
+        .catch((err) => {})
+    }
+
       
-      toggleIcon(getIcon: string) {
+    toggleIcon() {
         
-      if (this.buttonIcon === 'ios-heart') {
-        this.buttonIcon = "ios-heart-outline";
-      }
-      else if (this.buttonIcon === 'ios-heart-outline') {
-        this.buttonIcon = "ios-heart";
-      }
+      axios
+        .get(route.app_url + '/food-like-unlike/' + this.navParams.data.food_id + '/' + 1)
+        .then((response) => {
+          this.getFoodData(this.navParams.data.food_id)
+          this.presentToast(response.data.message)
+        })
+        .catch((err) => {})
       
     }
 
@@ -103,6 +130,15 @@ export class FoodProfilePage {
     delete(){
         this.rate = null;
         this.slides.slideTo(1);
+    }
+
+    presentToast(message) {
+      let toast = this.toastCtrl.create({
+        message: message,
+        duration: 2000,
+        position: 'down'
+      });
+      toast.present();
     }
 
 }

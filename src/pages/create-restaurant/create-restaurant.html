@@ -1,0 +1,66 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="create_restaurant">
+    <div class="shadow">
+
+    </div>
+
+    <div class="input-content">
+      <ion-list>
+        <div class="divider"></div>
+        <ion-item>
+          <ion-label>Restaurant Name</ion-label>
+          <ion-input type="text" [(ngModel)]="form.restaurant_name"></ion-input>
+        </ion-item>
+
+        <div class="divider"></div>
+        <ion-item>
+          <ion-label style="text-align: left">Zila</ion-label>
+          <ion-select [(ngModel)]="zila" (ngModelChange)="getZila($event)">
+            <div >
+              <ion-option [value]="item" *ngFor="let item of zilas">{{item.zila_name}}</ion-option>
+            </div>
+
+          </ion-select>
+        </ion-item>
+
+
+        <div class="divider"></div>
+        <ion-item>
+          <ion-label style="text-align: left">Area</ion-label>
+          <ion-select [(ngModel)]="area" (ngModelChange)="getArea($event)">
+            <ion-option [value]="item" *ngFor="let item of areas">{{item.area_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+        <div class="divider"></div>
+        <ion-item>
+          <ion-label>Address line 1</ion-label>
+          <ion-textarea [(ngModel)]="form.address_line_1"></ion-textarea>
+        </ion-item>
+
+        <div class="divider"></div>
+        <ion-item>
+          <ion-label>Address line 2</ion-label>
+          <ion-textarea [(ngModel)]="form.address_line_2"></ion-textarea>
+        </ion-item>
+
+        <div class="divider"></div>
+        <div class="submit">
+          <button ion-button color="dark" (tap)="goMapPage()">Submit</button>
+        </div>
+
+
+      </ion-list>
+
+      <ion-list>
+
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
