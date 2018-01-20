@@ -23,6 +23,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
+import { CreateRestaurantPage } from '../pages/create-restaurant/create-restaurant';
+import { SelectLocationPage } from '../pages/select-location/select-location';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,6 +41,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { Camera } from '@ionic-native/camera';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 @NgModule({
   declarations: [    
@@ -48,6 +51,8 @@ import { Camera } from '@ionic-native/camera';
     ChooseRegularRestaurantCatPage,
     ChooseRegularRestaurantPage,
     ChooseRegularFoodCatPage,
+    CreateRestaurantPage,
+    SelectLocationPage,
     MyApp,
     HomePage,
     ListPage,
@@ -89,7 +94,9 @@ import { Camera } from '@ionic-native/camera';
     SettingsPage,
     RecommendedPage,
     AddFoodPage,
-    AutocompletePage
+    AutocompletePage,
+    CreateRestaurantPage,
+    SelectLocationPage
   ],
   providers: [
     StatusBar,
@@ -104,6 +111,7 @@ import { Camera } from '@ionic-native/camera';
     ImagePicker,
     Crop,
     Camera,
+    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

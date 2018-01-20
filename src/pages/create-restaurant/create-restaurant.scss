@@ -1,0 +1,23 @@
+page-create-restaurant {
+  .scroll-content {
+    padding: 0px !important;
+  }
+  .create_restaurant {
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .input-content {
+      .divider {
+        margin-top: 50px;
+      }
+      .submit {
+        text-align: center;
+      }
+    }
+
+  }
+}
