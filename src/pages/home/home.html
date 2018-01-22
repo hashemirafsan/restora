@@ -23,7 +23,7 @@
 
 
 <ion-content class="card-background-page" padding>
-
+ 
   <div class="dashboard" *ngIf="searchBar">
     <ion-fab bottom right edge (tap)="openSearch()">
       <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
@@ -72,6 +72,7 @@
   
   <div class="dashboard" *ngIf="!searchBar">
     <div class="dashboard-title">
+       {{msg}}
       <p>{{user.first_name}}'s Activity</p>
       <p><ion-icon name="pin"></ion-icon> <span>{{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
     </div>

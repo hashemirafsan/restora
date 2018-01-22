@@ -18,6 +18,10 @@ import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResul
 
 import { RestaurantProfilePage } from '../restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../food-profile/food-profile';
+import * as io from 'socket.io-client';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +29,7 @@ import { FoodProfilePage } from '../food-profile/food-profile';
 })
 export class HomePage {
   selectedItem: any;
-
+  socket: any;
   public name;
   public email;
   public details;
@@ -40,8 +44,29 @@ export class HomePage {
   public food = [];
   public loader = null;
   public location = {};
+  public msg = '';
 
-  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
+  constructor(public toastCtrl: ToastController, private localNotifications: LocalNotifications,public backgroundMode : BackgroundMode,public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
+    
+    this.socket = io.connect('https://restora.herokuapp.com/' , {
+          query: "userId=" + 1
+        });
+
+    console.log(this.socket)
+
+    this.socket.on('create_restaurant', (msg) => {
+
+      this.msg = this.msg + msg;
+
+      this.localNotifications.schedule({
+        id: 1,
+        text: 'Single ILocalNotification'
+      });
+
+      this.presentToast(msg);
+    })
+
+
     
     axios
       .get(route.app_url + '/user-info/1')
@@ -115,6 +140,15 @@ export class HomePage {
   ionViewWillEnter() {
        this.viewCtrl.showBackButton(false);
   }
+
+   presentToast(message) {
+      let toast = this.toastCtrl.create({
+        message: message,
+        duration: 2000,
+        position: 'down'
+      });
+      toast.present();
+    }
 
       
 
