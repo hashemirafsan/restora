@@ -6,6 +6,8 @@ import {AutocompletePage} from '../autocomplete/autocomplete';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { Camera } from '@ionic-native/camera';
+import { SelectRestaurantCatPage } from '../select-restaurant-cat/select-restaurant-cat';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-add-food',
@@ -94,6 +96,17 @@ export class AddFoodPage{
     //     console.log(err)
     //   })
   }
+
+  //go next
+  goNext(event){
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  //go back
+  goBack(event){
+    this.navCtrl.setRoot(SelectRestaurantCatPage);
+  }
+
 
 
 }
