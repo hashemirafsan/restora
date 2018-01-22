@@ -1,0 +1,49 @@
+<ion-content padding text-center>
+
+	<div class="add-regular-restaurant-cat">
+		<div class="shadow"></div>
+		<div class="regular-restaurant-cat-wrapper">
+			<div class="regular-restaurant-cat-intro">
+				<p>Choose Some Restarant Category</p>
+			</div>
+
+			<div class="regular-restaurant-cat-content">
+						<ion-card *ngFor="let item of restCatId">
+							<ion-item>
+							  	<ion-avatar item-start>
+							      <img src="assets/images/RestaurantCat/Chinese.png">
+							    </ion-avatar>
+							    <ion-label>{{item.restaurant_categories_name}}</ion-label>
+							    <ion-icon name="ios-checkmark-circle-outline" item-end *ngIf="item.status==true"></ion-icon>
+							    <ion-checkbox [(ngModel)]="item.status" item-end>
+							    </ion-checkbox>
+							</ion-item>
+						</ion-card>
+						
+				</div>
+
+				<button  ion-button color="light" outline   (tap)="goNext($event,details)">NEXT</button>		
+		</div>
+	</div>
+	
+	<ion-footer>
+		<ion-row class="pager">				 
+			  	<button ion-button clear (tap)="goBack1($event)"  style="background: white;color:black;text-decoration: none;opacity: .7">
+			  		1
+			  	</button>
+				<button ion-button clear (tap)="goBack($event)"  style="background: white;color:black;text-decoration: none;opacity: .7">
+			  		2
+			  	</button>
+			  	<button ion-button clear  style="background: white;color:black">
+			  		3
+			  	</button>
+			  	<button ion-button clear disabled  style="background: white;color:black">
+			  		4
+			  	</button>
+			  	<button ion-button clear disabled  style="background: white;color:black">
+			  		5
+			  	</button>				
+		</ion-row>
+	</ion-footer>
+			
+</ion-content>
