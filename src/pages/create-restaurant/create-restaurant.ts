@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FileChooser } from '@ionic-native/file-chooser';
 import axios from 'axios';
 import { route } from '../../assets/Auth/Auth';
+import { SelectLocationPage } from '../select-location/select-location';
 
 
 /**
@@ -19,9 +20,13 @@ import { route } from '../../assets/Auth/Auth';
 export class CreateRestaurantPage {
 
   public zilas = [];
-  public zila = {};
+  public zila = {
+    id: ''
+  };
   public areas = [];
-  public area = {};
+  public area = {
+    id: ''
+  };
 
   public form = {
     restaurant_name : '',
@@ -45,11 +50,31 @@ export class CreateRestaurantPage {
   }
 
   goMapPage() {
-    console.log(this.form)
+
+    let data = {
+      area_id: this.area.id,
+      zila_id: this.zila.id,
+      ...this.form
+    }
+
+    axios.post(route.app_url + '/store-restaurant', data)
+         .then((res) => {
+            this.navCtrl.push(SelectLocationPage, {
+              restaurant_id: res.data.restaurant_id
+            })
+         })
+         .catch((err) => {
+            console.log(err)
+         })
+    console.log(data)
   }
 
   getZila(event) {
     this.areas = event.areas;
+  }
+
+  getArea(event) {
+
   }
 
   loadImage() {

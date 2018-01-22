@@ -51,7 +51,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SelectLocationPage;
+  rootPage: any = LoginPage;
 
   public getData;
   map: GoogleMap;
