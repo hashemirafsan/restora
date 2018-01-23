@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-import { ChooseUserPage } from '../choose-user/choose-user';
 import { ChooseRegularRestaurantCatPage } from '../choose-regular-restaurant-cat/choose-regular-restaurant-cat';
 
 import { Keyboard } from '@ionic-native/keyboard';
@@ -33,17 +31,11 @@ export class AddRegularDetailsPage {
   }
 
   ionViewDidLoad(){
-    this.name = this.navParams.get('name');
-    this.email = this.navParams.get('email');
   }
 
   goNext(event,details){
     this.updateDetails(1, details);
-  	this.navCtrl.setRoot(ChooseRegularRestaurantCatPage,this.data);
-  }
-  goBack(event){
-  	this.navCtrl.setRoot(ChooseUserPage,{name:this.name,email:this.email});
-
+  	this.navCtrl.setRoot(ChooseRegularRestaurantCatPage);
   }
 
   updateDetails(user,details) {

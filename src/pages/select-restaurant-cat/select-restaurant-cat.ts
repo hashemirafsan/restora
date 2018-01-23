@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ChooseRegularRestaurantPage } from '../choose-regular-restaurant/choose-regular-restaurant';
+import { AddFoodPage } from '../add-food/add-food';
 import axios from 'axios';
 import _ from 'lodash';
 import { route } from '../../assets/Auth/Auth';
 
 @Component({
-  selector: 'page-choose-regular-restaurant-cat',
-  templateUrl: 'choose-regular-restaurant-cat.html',
+  selector: 'page-select-restaurant-cat',
+  templateUrl: 'select-restaurant-cat.html',
 })
-export class ChooseRegularRestaurantCatPage {
+export class SelectRestaurantCatPage {
 
   public name;
   public email;
@@ -25,6 +25,8 @@ export class ChooseRegularRestaurantCatPage {
           item.status = false;
         })
         this.restCatId = res.data;
+
+        console.log(res);
       })
       .catch(err => {
         console.log(err)
@@ -40,9 +42,8 @@ export class ChooseRegularRestaurantCatPage {
 
   goNext(event){
     this.updateRestaurantCategory(1);
-  	this.navCtrl.setRoot(ChooseRegularRestaurantPage);
+  	this.navCtrl.setRoot(AddFoodPage);
   }
-
 
   updateRestaurantCategory(user) {
     let arr = [];

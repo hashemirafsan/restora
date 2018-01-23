@@ -4,7 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
 
+import { CreateRestaurantPage } from '../pages/create-restaurant/create-restaurant';
 import { SelectLocationPage } from '../pages/select-location/select-location';
+import { SelectRestaurantCatPage } from '../pages/select-restaurant-cat/select-restaurant-cat';
+
 import { LoginPage } from '../pages/login/login';
 import { ChooseUserPage } from '../pages/choose-user/choose-user';
 import { AddRegularDetailsPage } from '../pages/add-regular-details/add-regular-details';

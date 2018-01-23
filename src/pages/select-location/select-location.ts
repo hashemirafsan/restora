@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { SelectRestaurantCatPage } from '../select-restaurant-cat/select-restaurant-cat';
 import {
  GoogleMaps,
  GoogleMap,
@@ -56,6 +57,7 @@ export class SelectLocationPage {
         draggable: true
       });
 
+
       google.maps.event.addListener(marker, 'dragend', () =>{ 
          this.lastLat = marker.position.lat()
          this.lastLng = marker.position.lng()
@@ -65,6 +67,11 @@ export class SelectLocationPage {
 
       console.log(this.map)
 
+
+      google.maps.event.addListener(marker, 'click', () => {
+        this.navCtrl.setRoot(SelectRestaurantCatPage);
+      });
+
  
     }, (err) => {
       console.log(err);
@@ -72,33 +79,33 @@ export class SelectLocationPage {
  
   }
 
-  addMarker(){
+  // addMarker(){
 
-    let data = {
-      lat: this.lastLat,
-      lng: this.lastLng
-    }
+  //   let data = {
+  //     lat: this.lastLat,
+  //     lng: this.lastLng
+  //   }
     
-    axios.post(route.app_url + '/store-lat-lng/' + this.navParams.data.restaurant_id, data)
-         .then((response) => {
-            console.log(response)
-         })
-         .catch((err) => {
-           console.log(err)
-         })
+  //   axios.post(route.app_url + '/store-lat-lng/' + this.navParams.data.restaurant_id, data)
+  //        .then((response) => {
+  //           console.log(response)
+  //        })
+  //        .catch((err) => {
+  //          console.log(err)
+  //        })
    
-  }
+  // }
 
-  addInfoWindow(marker, content){
+  // addInfoWindow(marker, content){
  
-    let infoWindow = new google.maps.InfoWindow({
-      content: content
-    });
+  //   let infoWindow = new google.maps.InfoWindow({
+  //     content: content
+  //   });
    
-    google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.open(this.map, marker);
-    });
+  //   google.maps.event.addListener(marker, 'click', () => {
+  //     infoWindow.open(this.map, marker);
+  //   });
  
-  }
+  // }
 
 }

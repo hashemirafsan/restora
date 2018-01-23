@@ -25,6 +25,7 @@ import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 import { CreateRestaurantPage } from '../pages/create-restaurant/create-restaurant';
 import { SelectLocationPage } from '../pages/select-location/select-location';
+import { SelectRestaurantCatPage } from '../pages/select-restaurant-cat/select-restaurant-cat';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -68,7 +69,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SettingsPage,
     RecommendedPage,
     AddFoodPage,
-    AutocompletePage
+    AutocompletePage,
+    SelectRestaurantCatPage
   ],
   imports: [
     BrowserModule,
@@ -98,7 +100,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     AddFoodPage,
     AutocompletePage,
     CreateRestaurantPage,
-    SelectLocationPage
+    SelectLocationPage,
+    SelectRestaurantCatPage
   ],
   providers: [
     StatusBar,
