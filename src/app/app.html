@@ -1,4 +1,4 @@
-<ion-menu [content]="content" side="left">
+<ion-menu [content]="content" side="left" id="menu1">
   <ion-header>
    <!--  <ion-toolbar>
       <ion-title>Restora</ion-title>
@@ -74,6 +74,99 @@
   </ion-content>
 
 </ion-menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ion-menu [content]="content" side="right" id="menu2">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>You have <b style="color:#5b4cab">4 new</b> notifications.</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+
+  <ion-list>  
+
+
+    <button ion-item (tap)="itemTapped($event)" class="back">      
+      <img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" class="image">
+      <div class="item-note" item-right>
+        <b>Panshi</b> added a  new food ...
+      </div>
+    </button>
+
+    <div class="new"></div>
+
+
+    <button ion-item (tap)="itemTapped($event)" class="back">      
+      <img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" class="image">
+      <div class="item-note" item-right>
+        <b>Panshi</b> added a  new food ...
+      </div>
+    </button>
+
+    <div class="new"></div>
+
+    <button ion-item (tap)="itemTapped($event)" class="back">      
+      <img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" class="image">
+      <div class="item-note" item-right>
+        <b>Panshi</b> added a  new food ...
+    </div>
+    </button>
+
+    <div class="new"></div>
+
+    <button ion-item (tap)="itemTapped($event)" class="back">      
+      <img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" class="image">
+      <div class="item-note" item-right>
+        <b>Panshi</b> added a  new food ...
+    </div>
+    </button>
+
+    <div class="new"></div>
+
+    <button ion-item (tap)="itemTapped($event)">      
+      <img src="../assets/images/RestaurantProfile/restaurant-pro01.jpg" class="image">
+      <div class="item-note" item-right>
+        <b>Panshi</b> added a  new food ...
+      </div>
+    </button>
+
+    <div class="new"></div>
+   
+
+  </ion-list>
+
+</ion-content>
+
+
+</ion-menu>
+
+
+
+
+
+
 
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

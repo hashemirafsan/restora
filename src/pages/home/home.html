@@ -1,6 +1,6 @@
 <ion-header *ngIf="!searchBar">
   <ion-navbar >
-    <button ion-button menuToggle>
+    <button ion-button menuToggle="left">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Dashboard</ion-title>
@@ -10,6 +10,12 @@
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
+
+
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="ios-notifications"></ion-icon>
+    </button>
+    
   </ion-navbar>
 </ion-header>
 
