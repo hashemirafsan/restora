@@ -15,8 +15,10 @@ export class ChooseUserPage {
 	public name;
 	public email;
   public data;
+  public userId='';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.userId = this.navParams.get('id')
   }
 
   ionViewDidLoad(){
@@ -28,11 +30,11 @@ export class ChooseUserPage {
 
 
   regularUser(event){
-  	this.updateUser(1, 'regular')
+  	this.updateUser(this.userId, 'regular')
   	this.navCtrl.setRoot(AddRegularDetailsPage,this.data);
   }
     authorityUser() {
-        this.updateUser(1, 'authority');
+        this.updateUser(this.userId, 'authority');
         this.navCtrl.setRoot(CreateRestaurantPage, this.data);
     }
 
