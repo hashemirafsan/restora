@@ -41,6 +41,7 @@ import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 
+
 import axios from 'axios';
 import _ from 'lodash';
 import { route } from '../assets/Auth/Auth';
@@ -54,7 +55,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SelectLocationPage;
+  rootPage: any = HomePage;
 
   public getData;
   map: GoogleMap;
@@ -64,8 +65,15 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public statusBar: StatusBar, private googlePlus: GooglePlus, public splashScreen: SplashScreen, private geolocation: Geolocation) {
+  constructor( public platform: Platform, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public statusBar: StatusBar, private googlePlus: GooglePlus, public splashScreen: SplashScreen, private geolocation: Geolocation) {
+    /**
+     * Background Notification add
+     */
+
+     
     this.initializeApp();
+
+
 
     this.geolocation.getCurrentPosition().then((position) => {
       this.getData = "Can't find you!";
