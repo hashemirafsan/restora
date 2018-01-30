@@ -79,7 +79,7 @@
   <!-- feed -->
   <div class="dashboard-feed" *ngIf="!searchBar">
     <div class="dashboard-title">
-       {{msg}}
+       {{obj | json}}
       <p>{{user.first_name}}'s Activity</p>
       <p><ion-icon name="pin"></ion-icon> <span> {{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
     </div>

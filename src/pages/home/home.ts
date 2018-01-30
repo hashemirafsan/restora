@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController} from 'ionic-angular';
 import axios from 'axios';
+import { NativeStorage } from '@ionic-native/native-storage';
 import _ from 'lodash';
 import { route } from '../../assets/Auth/Auth';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -45,9 +46,16 @@ export class HomePage {
   public loader = null;
   public location = {};
   public msg = '';
+  public obj = {};
 
-  constructor(public toastCtrl: ToastController, private localNotifications: LocalNotifications,public backgroundMode : BackgroundMode,public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
+  constructor(public nativeStorage: NativeStorage, public toastCtrl: ToastController, private localNotifications: LocalNotifications,public backgroundMode : BackgroundMode,public loadingCtrl: LoadingController, public navCtrl: NavController, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private googleMaps: GoogleMaps, public viewCtrl: ViewController,public navParams: NavParams) {
     
+    this.nativeStorage.getItem('myitem')
+    .then(
+      data => this.obj = data,
+      error => console.error(error)
+    );
+
     this.socket = io.connect('https://restora.herokuapp.com/' , {
           query: "userId=" + 1
         });
