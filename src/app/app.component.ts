@@ -53,7 +53,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = RestaurantsPage;
 
   public getData;
   map: GoogleMap;

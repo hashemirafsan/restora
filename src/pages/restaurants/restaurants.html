@@ -12,10 +12,10 @@
     </button>
     <ion-title>All Restaurants</ion-title>
   </ion-navbar>
-</ion-header>
+ </ion-header>
 
 
-  <ion-content>
+  <ion-content class="restaurant-content-page">
     <div *ngIf="loading" class="loading" text-center>
         <span>Loading</span>
       <span class="l-1"></span>
@@ -32,7 +32,7 @@
           <img src="assets/images/FoodCat/Soup.png">
           <ion-card-content>
             <ion-card-title>
-            {{ item?.restaurant_name }}
+            <u>{{ item?.restaurant_name }}</u>
             </ion-card-title>
             <p>
               The most popular industrial group ever, and largely
