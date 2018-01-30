@@ -28,8 +28,6 @@ import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResul
 
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../pages/food-profile/food-profile';
@@ -97,9 +95,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Tabs', component:TabsPage },
       { title: 'Profile', component: ProfilePage},
-
       { title: 'Foods', component: FoodsPage},
       { title: 'Restaurant', component: RestaurantsPage },
       { title: 'Settings', component: SettingsPage },

@@ -12,8 +12,6 @@ import { ChooseRegularFoodCatPage } from '../pages/choose-regular-food-cat/choos
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { RestaurantProfilePage } from '../pages/restaurant-profile/restaurant-profile';
 import { FoodProfilePage } from '../pages/food-profile/food-profile';
@@ -58,8 +56,6 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SelectLocationPage,
     MyApp,
     HomePage,
-    ListPage,
-    TabsPage,
     ProfilePage,
     RestaurantProfilePage,
     FoodProfilePage,
@@ -88,8 +84,6 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     ChooseRegularFoodCatPage,
     MyApp,
     HomePage,
-    ListPage,
-    TabsPage,
     ProfilePage,
     RestaurantProfilePage,
     FoodProfilePage,

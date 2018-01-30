@@ -1,6 +1,6 @@
 <ion-header *ngIf="!searchBar">
-  <ion-navbar >
-    <button ion-button menuToggle>
+  <ion-navbar class="menuIcons">
+    <button ion-button menuToggle="left">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Dashboard</ion-title>
@@ -10,6 +10,12 @@
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
+
+
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="ios-notifications"></ion-icon>
+    </button>
+    
   </ion-navbar>
 </ion-header>
 
@@ -21,11 +27,11 @@
 
 
 
-
+<!-- search result -->
 <ion-content class="card-background-page" padding>
  
   <div class="dashboard" *ngIf="searchBar">
-    <ion-fab bottom right edge (tap)="openSearch()">
+    <ion-fab bottom right edge (tap)="openSearch()" class="backArrowIcon">
       <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
     </ion-fab>
     <div class="restaurant">
@@ -70,11 +76,12 @@
       
   </div>
   
-  <div class="dashboard" *ngIf="!searchBar">
+  <!-- feed -->
+  <div class="dashboard-feed" *ngIf="!searchBar">
     <div class="dashboard-title">
        {{obj | json}}
       <p>{{user.first_name}}'s Activity</p>
-      <p><ion-icon name="pin"></ion-icon> <span>{{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
+      <p><ion-icon name="pin"></ion-icon> <span> {{ getData?.thoroughfare }} ,{{ getData?.locality }}</span></p>
     </div>
     <ul class="list-unstyled list-inline activity">
       <li>
@@ -92,7 +99,7 @@
     </ul>
   </div>
 
-  <section>
+  <section *ngIf="!searchBar">
       <div class="food_header">
         <h2>
           <span>Food</span>
@@ -103,13 +110,13 @@
   <section class="news_feed" *ngIf="!searchBar">
     <ion-grid>
       <ion-row>
-        <ion-col col-6>
+        <ion-col col-6 class="two_feed">
         <ion-card>
-          <img src="assets/images/FoodCat/Soup.png">
+          <img src="assets/images/FoodItem/food (1).jpg">
           <ion-card-content>
-            <ion-card-title>
+            <p>
             Rafsan
-              </ion-card-title>
+              </p>
             <p>
               price : 150tk
             </p>
@@ -122,13 +129,13 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col col-6>
+      <ion-col col-6 class="two_feed">
         <ion-card>
-          <img src="assets/images/FoodCat/Soup.png">
+          <img src="assets/images/FoodItem/food (1).jpg">
           <ion-card-content>
-            <ion-card-title>
+            <p>
             Rafsan
-              </ion-card-title>
+              </p>
             <p>
               price : 150tk
             </p>
@@ -144,13 +151,13 @@
       </ion-row> 
     </ion-grid>
     <div>
-      <div col-md-6>
+      <div col-md-6 class="one_feed">
         <ion-card>
-          <img src="assets/images/FoodCat/Soup.png">
+          <img src="assets/images/FoodItem/food (1).jpg">
           <ion-card-content>
-            <ion-card-title>
+            <p>
             Rafsan
-              </ion-card-title>
+              </p>
             <p>
               The most popular industrial group ever, and largely
               responsible for bringing the music to a mass audience.
@@ -158,13 +165,13 @@
           </ion-card-content>
         </ion-card>
       </div>
-      <div col-md-6>
+      <div col-md-6 class="one_feed">
         <ion-card>
-          <img src="assets/images/FoodCat/Soup.png">
+          <img src="assets/images/FoodItem/food (1).jpg">
           <ion-card-content>
-            <ion-card-title>
+            <p>
             Rafsan
-              </ion-card-title>
+              </p>
             <p>
               The most popular industrial group ever, and largely
               responsible for bringing the music to a mass audience.
@@ -234,10 +241,3 @@
 
 
 </ion-content>
-
-<ion-tabs>
-    <ion-tab tabIcon="contact" ></ion-tab>
-    <ion-tab tabIcon="compass" ></ion-tab>
-    <ion-tab tabIcon="analytics" ></ion-tab>
-    <ion-tab tabIcon="settings"></ion-tab>
-  </ion-tabs>`
