@@ -67,11 +67,6 @@ export class SelectLocationPage {
 
       console.log(this.map)
 
-
-      google.maps.event.addListener(marker, 'click', () => {
-        this.navCtrl.setRoot(SelectRestaurantCatPage);
-      });
-
  
     }, (err) => {
       console.log(err);
@@ -79,22 +74,11 @@ export class SelectLocationPage {
  
   }
 
-  // addMarker(){
+  addMarker(){
 
-  //   let data = {
-  //     lat: this.lastLat,
-  //     lng: this.lastLng
-  //   }
-    
-  //   axios.post(route.app_url + '/store-lat-lng/' + this.navParams.data.restaurant_id, data)
-  //        .then((response) => {
-  //           console.log(response)
-  //        })
-  //        .catch((err) => {
-  //          console.log(err)
-  //        })
+    this.navCtrl.setRoot(SelectRestaurantCatPage,this.lastLng,this.lastLat);
    
-  // }
+  }
 
   // addInfoWindow(marker, content){
  

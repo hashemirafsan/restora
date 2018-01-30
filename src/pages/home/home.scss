@@ -1,21 +1,23 @@
 page-home {
+
 	.card-background-page {
 	  /*background: url('../../assets/images/dashboard.gif') no-repeat center;*/
 	  font-family: $primary-font;
+	  background: url('../assets/images/Intro/dashboard_bac.jpg');
 	  	#check {
 	  		width: 90% !important;
 	  	}
 
-	  	/*.scroll-content.scroll-content.scroll-content {
-			padding: 0px;
-	    	
-	  	}*/
+
+
 	  	.food_header {
 	  		span {
 			 /* position: relative;*/
 			  display: block;
-			  background: orange;
+			  background: #222;
+			  color:#fff;
 			  text-align: center;
+			  padding-bottom: 5px;
 			}
 			/*span:before {
 				content: "";
@@ -43,12 +45,85 @@ page-home {
 	  	}
 	  
 	  	.dashboard {
+	  		color:#fff;
+			z-index: 9999;
+		  	padding: 10px 10px;
+		  	overflow: hidden;
+		  	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+		    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+
+		    .backArrowIcon{
+		    	button{		    		
+			    	background: rgba(0,0,0,0.5);
+			    	top:20px;
+			    	ion-icon{
+			    		color:#fff;
+			    	}
+		        }
+		    }
+		    .dashboard-title {
+		    	ion-icon{
+		    		color:#fff;
+		    	}
+		    	display: flex;
+		    	justify-content: space-between;
+		    }
+		    h1{
+		      display: block;
+			  background: #222;
+			  color:#fff;
+			  text-align: center;
+			  padding-bottom: 5px;display: block;
+			  background: #222;
+			  color:#fff;
+			  text-align: center;
+			  padding-bottom: 5px;
+		    }
+		    .restaurant{
+		    	ion-card{
+		  		background: rgba(0,0,0,0.5);
+		  			img{
+						height: 150px;
+						width: 100%;
+					}
+
+					ion-card-content{
+						p{
+						color:#fff;
+						}						
+			  	    }
+		  	    }
+		    }
+		    .food{
+		    	ion-card{
+		  		background: rgba(0,0,0,0.5);
+			  		img{
+						height: 150px;
+						width: 100%;
+					}
+
+					ion-card-content{
+						p{
+						color:#fff;
+						}						
+			  	    }
+		  	    }
+		    }
+	  	}
+
+
+	  	.dashboard-feed {
+	  		color:#fff;
+	  		background: rgba(0,0,0,0.5);
 			z-index: 9999;
 		  	padding: 10px 10px;
 		  	overflow: hidden;
 		  	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 		    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
 		    .dashboard-title {
+		    	ion-icon{
+		    		color:#fff;
+		    	}
 		    	display: flex;
 		    	justify-content: space-between;
 		    }
@@ -77,69 +152,93 @@ page-home {
 		  	}
 	  	}
 
-	  	.newsfeed {
-	  		padding: 20px 0px;
+	  	.news_feed{
+	  		ion-card{
+	  		background: rgba(0,0,0,0.5);
 
-	  		.newsfeed-item {
-	  			margin-top: 70px;
-	  			border-radius:40px 40px 0px 0px;
-	  			-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-		    	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
-
-		    	&:hover {
-		    		img {
-		    			transform:scale(1.1);
-		    		}
-		    	}
-		    	.part-1-header {
-		    		display: flex;
-		    		justify-content: flex-start;
-		    		flex-direction: column;
-		    		align-items: center;
-		    		.img {
-		    			width: 100px;
-					    height: 100px;
-					    border-radius: 50%;
-					    overflow: hidden;
-		    			display: flex;
-		    			justify-content: center;
-		    			align-items: center;
-		    			border: 2px solid #ddd;
-		    			margin-top: -50px;
+				ion-card-content{
+					p{
+					color:#fff;
+					}
+		  	    }
+	  	    }
 
 
-		    			img {
-		    				width:80px;
-		    				height: 80px;
-		    				border-radius: 50%;
-		    				transition: all 0.3s ease-out;
-		    			}
-
-		    		}
-		    		
-		    	}
-
-		    	.title {
-		    		.author-name {
-		    			margin:0px;
-		    		}
-		    	}
-
-		    	.part-2-details {
-		    		padding: 15px;
-		    		p {
-		    			text-align: justify;
-		    		}
-
-		    	}
-
-		    	.part-3-footer {
-		    		padding: 15px;
-		    		display: flex;
-		    		justify-content: space-between;
-		    	}
-	  		}
+	  	    .two_feed{
+	  	    	img{
+					height: 100px;
+				}
+	  	    }
+	  	    .one_feed{
+	  	    	img{
+	  	    		height:  150px;
+	  	    	}
+	  	    }
 	  	}
+
+	  	// .newsfeed {
+	  	// 	padding: 20px 0px;
+
+	  	// 	.newsfeed-item {
+	  	// 		margin-top: 70px;
+	  	// 		border-radius:40px 40px 0px 0px;
+	  	// 		-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+		  //   	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+
+		  //   	&:hover {
+		  //   		img {
+		  //   			transform:scale(1.1);
+		  //   		}
+		  //   	}
+		  //   	.part-1-header {
+		  //   		display: flex;
+		  //   		justify-content: flex-start;
+		  //   		flex-direction: column;
+		  //   		align-items: center;
+		  //   		.img {
+		  //   			width: 100px;
+				// 	    height: 100px;
+				// 	    border-radius: 50%;
+				// 	    overflow: hidden;
+		  //   			display: flex;
+		  //   			justify-content: center;
+		  //   			align-items: center;
+		  //   			border: 2px solid #ddd;
+		  //   			margin-top: -50px;
+
+
+		  //   			img {
+		  //   				width:80px;
+		  //   				height: 80px;
+		  //   				border-radius: 50%;
+		  //   				transition: all 0.3s ease-out;
+		  //   			}
+
+		  //   		}
+		    		
+		  //   	}
+
+		  //   	.title {
+		  //   		.author-name {
+		  //   			margin:0px;
+		  //   		}
+		  //   	}
+
+		  //   	.part-2-details {
+		  //   		padding: 15px;
+		  //   		p {
+		  //   			text-align: justify;
+		  //   		}
+
+		  //   	}
+
+		  //   	.part-3-footer {
+		  //   		padding: 15px;
+		  //   		display: flex;
+		  //   		justify-content: space-between;
+		  //   	}
+	  	// 	}
+	  	// }
 
 	  	ion-card {
 		    position: relative;
