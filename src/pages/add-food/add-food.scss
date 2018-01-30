@@ -1,7 +1,9 @@
 page-add-food {
 
 	.list{
-		color:gray;
+		ion-label{
+			color:gray;
+		}
 		.title{
 			font-size: 20px;
 			border-bottom: 1px solid #000;

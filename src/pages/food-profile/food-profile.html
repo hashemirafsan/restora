@@ -134,20 +134,19 @@
                 <ion-icon name="star" *ngIf="rate >= 3"></ion-icon>  
                 <ion-icon name="star" *ngIf="rate >= 4"></ion-icon>
                 <ion-icon name="star" *ngIf="rate >= 5"></ion-icon>                                      
-              </fieldset>
-
-              <ion-icon id="select" name="md-more">
-                  <ion-select [(ngModel)]="options">
-                    <ion-option value="e" (tap)="edit()">Edit</ion-option>
-                    <ion-option value="d" (tap)="delete()">Delete</ion-option>
-                  </ion-select>
-              </ion-icon>  
-
+                </fieldset>          
               </ion-row>
 
               <small>rated on <i>12/12/2017</i></small>
               <p id="title"><b>{{title}}</b></p>
               <p id="desc">{{desc}}</p>
+              <ion-segment>
+                <ion-segment-button id="edit" (tap)="Edit(title,desc)"> Edit                  
+                </ion-segment-button>
+                <ion-segment-button id="delete" (tap)="Delete(title,desc)"> Delete                 
+                </ion-segment-button>
+              </ion-segment>
+
           </ion-slide>
         </ion-slides>            
       </div>

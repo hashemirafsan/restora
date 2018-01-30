@@ -174,5 +174,13 @@ export class RestaurantProfilePage {
     toast.present();
   }
 
+    //rate edit
+  Edit(){
+        
+  }
 
+  //rate delete
+  Delete(){
+    
+  }
 }
