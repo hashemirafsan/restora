@@ -54,7 +54,7 @@ page-home {
 
 		    .backArrowIcon{
 		    	button{		    		
-			    	background: rgba(0,0,0,0.5);
+			    	background: rgba(0,0,0,0.2);
 			    	top:20px;
 			    	ion-icon{
 			    		color:#fff;
@@ -81,7 +81,7 @@ page-home {
 		    }
 		    .restaurant{
 		    	ion-card{
-		  		background: rgba(0,0,0,0.5);
+		  		background: rgba(0,0,0,0.2);
 		  			img{
 						height: 150px;
 						width: 100%;
@@ -96,11 +96,12 @@ page-home {
 		    }
 		    .food{
 		    	ion-card{
-		  		background: rgba(0,0,0,0.5);
+		  		background: rgba(0,0,0,0.2);
 			  		img{
 						height: 150px;
 						width: 100%;
 					}
+				
 
 					ion-card-content{
 						p{
@@ -114,7 +115,7 @@ page-home {
 
 	  	.dashboard-feed {
 	  		color:#fff;
-	  		background: rgba(0,0,0,0.5);
+	  		background: rgba(0,0,0,0.2);
 			z-index: 9999;
 		  	padding: 10px 10px;
 		  	overflow: hidden;
@@ -154,7 +155,7 @@ page-home {
 
 	  	.news_feed{
 	  		ion-card{
-	  		background: rgba(0,0,0,0.5);
+	  		background: rgba(0,0,0,0.2);
 
 				ion-card-content{
 					p{
