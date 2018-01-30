@@ -26,13 +26,15 @@ export class SelectLocationPage {
   map: any;
   lastLat: 0;
   lastLng: 0;
+  public res_id = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public geolocation: Geolocation) {
-
+    this.res_id = this.navParams.data.restaurant_id;
+    this.loadMap();
   }
 
   ionViewDidLoad() {
-    this.loadMap();
+    
   }
 
   loadMap(){
@@ -52,7 +54,6 @@ export class SelectLocationPage {
 
       let marker = new google.maps.Marker({
         map: this.map,
-        animation: google.maps.Animation.DROP,
         position: latLng,
         draggable: true
       });
@@ -76,7 +77,22 @@ export class SelectLocationPage {
 
   addMarker(){
 
-    this.navCtrl.setRoot(SelectRestaurantCatPage,this.lastLng,this.lastLat);
+    let data = {
+      lat: this.lastLat,
+      lng: this.lastLng
+    }
+
+    axios.post(route.app_url + '/store-lat-lng/' + this.res_id, data)
+         .then(res => {
+             this.navCtrl.push(SelectRestaurantCatPage, {
+               restaurant_id: this.res_id
+             })
+         })
+         .catch(err => {
+            console.log(err)
+         })
+
+    //;
    
   }
 
