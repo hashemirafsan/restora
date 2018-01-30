@@ -53,10 +53,12 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CreateRestaurantPage;
+  rootPage: any = HomePage;
 
   public getData;
   map: GoogleMap;
+  public notifications = [];
+  public new_notification = 0;
 
 
   public location = {};
@@ -111,6 +113,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.getNotification('author', 5);
 
      //this.rootPage = HomePage;
 
@@ -126,6 +129,19 @@ export class MyApp {
       //   }
       // );
     });
+  }
+
+  getNotification(type, user_id) {
+    axios.get(route.app_url + '/get-notifications/' + type + '/' + user_id)
+         .then(res => {
+          this.new_notification = res.data.new_notification
+          this.notifications = res.data.notifications
+          console.log(this.notifications)
+            console.log(res)
+         })
+         .catch(err => {
+            console.log(err)
+         })
   }
 
   openPage(page) {
