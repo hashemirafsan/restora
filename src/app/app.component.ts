@@ -98,10 +98,11 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Profile', component: ProfilePage},
+      { title: 'Recommended', component: RecommendedPage},
       { title: 'Foods', component: FoodsPage},
       { title: 'Restaurant', component: RestaurantsPage },
-      { title: 'Settings', component: SettingsPage },
-      { title: 'Recommended', component: RecommendedPage }
+      { title: 'Settings', component: SettingsPage }
+      
 
     ];
 

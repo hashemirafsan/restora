@@ -1,23 +1,45 @@
 page-create-restaurant {
-  .scroll-content {
-    padding: 0px !important;
-  }
-  .create_restaurant {
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    background: white;
+  .create_restaurant_page{
+    background: url(../assets/images/Intro/create_restaurant_back.jpg) no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: right;
     position: relative;
-    .input-content {
-      .divider {
-        margin-top: 50px;
-      }
-      .submit {
-        text-align: center;
-      }
+    .scroll-content {
+      padding: 0px !important;
     }
+    .create_restaurant {
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      background: none;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+        .regular-restaurant-intro {
+          text-align: center;
+          p {
+            font-family: 'Cabin Sketch', cursive;
+            color: white;
+            font-size: 30px;
+          }
+        }
+      .input-content {
+        ion-item{
+          background: rgba(0,0,0,0.5);
+          color: #e6e5eb;
+          width: 90%;
+          margin: auto;
+        }
+        .divider {
+          margin-top: 50px;
+        }
+        .submit {
+          text-align: center;
+        }
+      }
 
+    }
   }
+
+
 }
