@@ -21,6 +21,9 @@ page-app {
 	/*.scroll-content {
 	     padding: 16px; 
 	}*/
+	ion-icon{
+		color:#000;
+	}
 	.menu-bar {
 		float:left !important;
 
@@ -129,13 +132,14 @@ page-app {
 	}
 
 	#menu2{
+
 		.back{
 			background: #e6e6e6;
 		}
 		button{
 			img{
 				height: 40px;
-				width: 80px;
+				width:  80px;
 			}			
 		}
 		.new{
