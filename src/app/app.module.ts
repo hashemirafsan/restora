@@ -24,7 +24,9 @@ import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 import { CreateRestaurantPage } from '../pages/create-restaurant/create-restaurant';
 import { SelectLocationPage } from '../pages/select-location/select-location';
 import { SelectRestaurantCatPage } from '../pages/select-restaurant-cat/select-restaurant-cat';
-
+import { FoodListPage } from '../pages/food-list/food-list';
+import { AllReviewsPage } from '../pages/all-reviews/all-reviews';
+import { RestaurantAllReviewsPage } from '../pages/restaurant-all-reviews/restaurant-all-reviews';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -66,7 +68,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     RecommendedPage,
     AddFoodPage,
     AutocompletePage,
-    SelectRestaurantCatPage
+    SelectRestaurantCatPage,
+    FoodListPage,
+    AllReviewsPage,
+    RestaurantAllReviewsPage
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     AutocompletePage,
     CreateRestaurantPage,
     SelectLocationPage,
-    SelectRestaurantCatPage
+    SelectRestaurantCatPage,
+    FoodListPage,
+    AllReviewsPage,
+    RestaurantAllReviewsPage
   ],
   providers: [
     StatusBar,

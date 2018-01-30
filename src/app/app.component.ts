@@ -39,6 +39,9 @@ import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 
+import { FoodListPage } from '../pages/food-list/food-list';
+import { AllReviewsPage } from '../pages/all-reviews/all-reviews';
+import { RestaurantAllReviewsPage } from '../pages/restaurant-all-reviews/restaurant-all-reviews';
 
 import axios from 'axios';
 import _ from 'lodash';
@@ -53,7 +56,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = RecommendedPage;
+  rootPage: any = RestaurantAllReviewsPage;
 
   public getData;
   map: GoogleMap;

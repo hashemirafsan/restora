@@ -4,7 +4,8 @@ import { Slides } from 'ionic-angular';
 import { route } from '../../assets/Auth/Auth';
 import axios from 'axios';
 import { ToastController } from 'ionic-angular';
-
+import { AllReviewsPage } from '../all-reviews/all-reviews';
+import { RestaurantAllReviewsPage } from '../restaurant-all-reviews/restaurant-all-reviews';
 
 @Component({
   selector: 'page-restaurant-profile',
@@ -183,4 +184,10 @@ export class RestaurantProfilePage {
   Delete(){
     
   }
+
+  //review
+  allreview(){
+    this.navCtrl.push(RestaurantAllReviewsPage);
+  }
+
 }

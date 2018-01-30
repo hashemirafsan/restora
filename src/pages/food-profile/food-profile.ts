@@ -6,6 +6,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { route } from '../../assets/Auth/Auth';
 import axios from 'axios';
 import { ToastController } from 'ionic-angular';
+import { AllReviewsPage } from '../all-reviews/all-reviews';
 // import { ImageViewerController } from 'ionic-img-viewer';
 
 @Component({
@@ -150,6 +151,11 @@ export class FoodProfilePage {
   //rate delete
   Delete(){
     
+  }
+
+  //review
+  allreview(){
+    this.navCtrl.push(AllReviewsPage);
   }
 
 }

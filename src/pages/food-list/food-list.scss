@@ -1,5 +1,5 @@
-page-foods {
-	.food-content-page{
+page-food-list {
+	.food-list-content-page{
 		 background: url('../assets/images/Intro/restaurant_bac.jpg');
 		.loading {
 			margin-top: 15px;
@@ -84,9 +84,22 @@ page-foods {
 					ion-card-content{
 						p{
 						color:#fff;
-						}						
+						}	
+						#delete{
+							float: right;
+							color:#fff;
+							font-size: 40px;
+							margin-right: 20px;
+						}
+						#edit{
+							float: right;
+							color: #fff;
+							font-size: 40px;
+							margin-right: 10px;
+						}					
 			  	    }
 		  	    }
 
-  }
+    }
+
 }

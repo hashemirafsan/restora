@@ -4,13 +4,13 @@
   	<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Foods</ion-title>
+    <ion-title>Our Foods</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding class="food-content-page">
+<ion-content padding class="food-list-content-page">
 	<div *ngIf="loading" class="loading" text-center>
         <span>Loading</span>
       <span class="l-1"></span>
@@ -21,13 +21,24 @@
       <span class="l-6"></span>
     </div>
 
-    <div *ngIf="foods">
-      <div col-md-6 *ngFor="let item of foods" (tap)="goFood(item?.food?.food_id)">
+    <div>
+      <div col-md-6 (tap)="goFood()">
         <ion-card>
           <img src="assets/images/FoodCat/Soup.png">
           <ion-card-content>
             <ion-card-title>
-            {{ item?.food?.food?.food_name }}
+            	
+	            	<ion-row>
+	            		<ion-col col-6>
+	            			Chicken Tikka         
+	            		</ion-col>
+	            		<ion-col col-6>
+			            	<ion-icon id="delete" name="ios-trash" (tap)="delete()"></ion-icon>
+			            	<ion-icon id="edit" name="md-clipboard" (tap)="edit()">
+			            	</ion-icon>
+	            		</ion-col>
+	            	</ion-row>
+         
             </ion-card-title>
             <p>
               The most popular industrial group ever, and largely
