@@ -157,9 +157,9 @@
               </p>
               <p>{{desc}}</p>
               <ion-segment>
-                <ion-segment-button id="edit" (tap)="Edit(title,desc)"> Edit                  
+                <ion-segment-button id="edit" (tap)="edit()"> Edit                  
                 </ion-segment-button>
-                <ion-segment-button id="delete" (tap)="Delete(title,desc)"> Delete                 
+                <ion-segment-button id="delete" (tap)="delete()"> Delete                 
                 </ion-segment-button>
               </ion-segment>
 
@@ -192,6 +192,7 @@
 			</div>
 	<div class="footer">
 		<button ion-button (tap)="allreview()">Read All Reviews</button>
+    <button ion-button (tap)="allfood()">All Of Our Foods</button>
 	</div>
 </div>
 

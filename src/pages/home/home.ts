@@ -143,6 +143,8 @@ export class HomePage {
     this.restCatId = this.navParams.get('restCatId');
     this.restId = this.navParams.get('restId');
     this.foodCatId = this.navParams.get('foodCatId');
+
+    this.getNotification('user', 1);
   }
 
   ionViewWillEnter() {
@@ -156,6 +158,24 @@ export class HomePage {
         position: 'down'
       });
       toast.present();
+    }
+
+
+    //check notification
+    public new_notification = null;
+
+    getNotification(type, user_id) {
+    axios.get(route.app_url + '/get-notifications/' + type + '/' + user_id)
+         .then(res => {
+          this.new_notification = res.data.new_notification
+          if(this.new_notification == 0){
+            this.new_notification = null;
+          }
+
+         })
+         .catch(err => {
+            console.log(err)
+         })
     }
 
       

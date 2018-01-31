@@ -39,9 +39,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { ImagePicker } from '@ionic-native/image-picker';
-import { Crop } from '@ionic-native/crop';
-import { Camera } from '@ionic-native/camera';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
@@ -115,10 +112,6 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     NativeGeocoder,
     GoogleMaps,
     PhotoViewer,
-    ImagePicker,
-    Crop,
-    Camera,
-    FileChooser,
     BackgroundMode,
     LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

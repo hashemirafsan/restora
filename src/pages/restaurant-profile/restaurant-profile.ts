@@ -6,6 +6,7 @@ import axios from 'axios';
 import { ToastController } from 'ionic-angular';
 import { AllReviewsPage } from '../all-reviews/all-reviews';
 import { RestaurantAllReviewsPage } from '../restaurant-all-reviews/restaurant-all-reviews';
+import { FoodListPage } from '../food-list/food-list';
 
 @Component({
   selector: 'page-restaurant-profile',
@@ -157,15 +158,18 @@ export class RestaurantProfilePage {
       this.slides.lockSwipes(true);   
     }
 
+     //rate edit
     edit(){
         this.slides.slideTo(1);
     }
 
+      //rate delete
     delete(){
         this.rate = null;
         this.slides.slideTo(1);
     }
-  
+
+    //tiast  
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
@@ -175,19 +179,17 @@ export class RestaurantProfilePage {
     toast.present();
   }
 
-    //rate edit
-  Edit(){
-        
-  }
+   
+ 
 
-  //rate delete
-  Delete(){
-    
-  }
-
-  //review
+  //allreview
   allreview(){
     this.navCtrl.push(RestaurantAllReviewsPage);
+  }
+
+  //allfoods
+  allfood(){
+    this.navCtrl.push(FoodListPage);
   }
 
 }

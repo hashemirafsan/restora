@@ -21,6 +21,7 @@ page-app {
 	/*.scroll-content {
 	     padding: 16px; 
 	}*/
+
 	ion-icon{
 		color:#000;
 	}
@@ -131,21 +132,24 @@ page-app {
 		}
 	}
 
-	#menu2{
-
-		.back{
-			background: #e6e6e6;
-		}
-		button{
-			img{
-				height: 40px;
-				width:  80px;
-			}			
-		}
-		.new{
-				background:#a09c9c;
-				height: 1px;
-				width: 100%;
+	#menu2{		
+		.menu2Content{
+			background: #222222;
+			color:#fff;
+			.back{
+				background: #e6e6e6;
 			}
+			button{
+				img{
+					height: 40px;
+					width:  80px;
+				}			
+			}
+			.new{
+					background:#a09c9c;
+					height: 1px;
+					width: 100%;
+				}
+		}
 	}
 }

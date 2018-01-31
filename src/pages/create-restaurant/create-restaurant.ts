@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { FileChooser } from '@ionic-native/file-chooser';
+//import { FileChooser } from '@ionic-native/file-chooser';
 import axios from 'axios';
 import { route } from '../../assets/Auth/Auth';
 import { SelectLocationPage } from '../select-location/select-location';
@@ -35,7 +35,7 @@ export class CreateRestaurantPage {
     user_id: 1
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fileChooser: FileChooser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.fetchAllAreaAndZila()
   }
 
@@ -78,10 +78,10 @@ export class CreateRestaurantPage {
   }
 
   loadImage() {
-    console.log('yes')
-    this.fileChooser.open()
-        .then(uri => console.log(uri))
-        .catch(e => console.log(e));
+    // console.log('yes')
+    // this.fileChooser.open()
+    //     .then(uri => console.log(uri))
+    //     .catch(e => console.log(e));
   }
 
   ionViewDidLoad() {
