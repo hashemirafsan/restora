@@ -24,7 +24,9 @@ import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 import { CreateRestaurantPage } from '../pages/create-restaurant/create-restaurant';
 import { SelectLocationPage } from '../pages/select-location/select-location';
 import { SelectRestaurantCatPage } from '../pages/select-restaurant-cat/select-restaurant-cat';
-
+import { FoodListPage } from '../pages/food-list/food-list';
+import { AllReviewsPage } from '../pages/all-reviews/all-reviews';
+import { RestaurantAllReviewsPage } from '../pages/restaurant-all-reviews/restaurant-all-reviews';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,12 +39,11 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { ImagePicker } from '@ionic-native/image-picker';
-import { Crop } from '@ionic-native/crop';
-import { Camera } from '@ionic-native/camera';
-import { FileChooser } from '@ionic-native/file-chooser';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [    
@@ -66,7 +67,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     RecommendedPage,
     AddFoodPage,
     AutocompletePage,
-    SelectRestaurantCatPage
+    SelectRestaurantCatPage,
+    FoodListPage,
+    AllReviewsPage,
+    RestaurantAllReviewsPage
   ],
   imports: [
     BrowserModule,
@@ -95,7 +99,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     AutocompletePage,
     CreateRestaurantPage,
     SelectLocationPage,
-    SelectRestaurantCatPage
+    SelectRestaurantCatPage,
+    FoodListPage,
+    AllReviewsPage,
+    RestaurantAllReviewsPage
   ],
   providers: [
     StatusBar,
@@ -107,12 +114,12 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     NativeGeocoder,
     GoogleMaps,
     PhotoViewer,
-    ImagePicker,
-    Crop,
-    Camera,
-    FileChooser,
     BackgroundMode,
     LocalNotifications,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

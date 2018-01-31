@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { route } from '../../assets/Auth/Auth';
 import axios from 'axios';
 import { ToastController } from 'ionic-angular';
+import { AllReviewsPage } from '../all-reviews/all-reviews';
 // import { ImageViewerController } from 'ionic-img-viewer';
 
 @Component({
@@ -20,7 +21,7 @@ export class FoodProfilePage {
   images = ['food (1).jpg', 'food (2).jpg', 'food (3).jpg', 'food (4).jpg'];
   public food_details = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public photoViewer: PhotoViewer,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public photoViewer: PhotoViewer,public toastCtrl: ToastController,private modalCtrl: ModalController) {
     console.log('food_id', this.navParams.data.food_id)
     this.getFoodData(this.navParams.data.food_id)
   }
@@ -140,5 +141,21 @@ export class FoodProfilePage {
       });
       toast.present();
     }
+
+
+  //rate edit
+  Edit(){
+        
+  }
+
+  //rate delete
+  Delete(){
+    
+  }
+
+  //review
+  allreview(){
+    this.navCtrl.push(AllReviewsPage);
+  }
 
 }

@@ -1,9 +1,10 @@
-page-recommended {
-	.recommended-page{
-		background: url(../assets/images/Intro/dashboard_bac.jpg) no-repeat;
-	    background-size: cover;
-	    background-position: right;
-	    position: relative;
+page-food-list {
+	.food-list-content-page{
+		 background: url('../assets/images/Intro/restaurant_bac.jpg');
+		 background-size: cover;
+		.loading {
+			margin-top: 15px;
+		}
 		span {
 			display: block; 
 			margin: 0 auto;
@@ -71,22 +72,35 @@ page-recommended {
 		#check {
 		  	width: 90% !important;
 		}
-		.text-center{
-		  display: block;
-		  background: #424242;
-		  color:#fff;
-		  text-align: center;
-		  padding-bottom: 5px;
-		}
 		ion-card{
-	  		background: rgba(0,0,0,0.2);
-
-				ion-card-content{
-					p{
-					color:#fff;
+		  		background: rgba(34,34,34,0.60);
+			  		img{
+						height: 250px;
+						width: 100%;
 					}
+					ion-card-title{
+						color:#fff;
+					}
+
+					ion-card-content{
+						p{
+						color:#fff;
+						}	
+						#delete{
+							float: right;
+							color:#fff;
+							font-size: 40px;
+							margin-right: 20px;
+						}
+						#edit{
+							float: right;
+							color: #fff;
+							font-size: 40px;
+							margin-right: 10px;
+						}					
+			  	    }
 		  	    }
-	  	}
 
     }
+
 }

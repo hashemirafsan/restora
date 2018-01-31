@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ModalController,ToastController,LoadingController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import {AutocompletePage} from '../autocomplete/autocomplete';
-import { ImagePicker } from '@ionic-native/image-picker';
-import { Crop } from '@ionic-native/crop';
-import { Camera } from '@ionic-native/camera';
 import { SelectRestaurantCatPage } from '../select-restaurant-cat/select-restaurant-cat';
 import { HomePage } from '../home/home';
+
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-add-food',
@@ -19,8 +20,16 @@ export class AddFoodPage{
 
   public inputs;
   public photos = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
-    private imagePicker:ImagePicker,private cropService : Crop,private camera : Camera) {
+
+  imageURI:any;
+  imageFileName:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private modalCtrl: ModalController,
+  private transfer: FileTransfer,
+  private camera: Camera,
+  public loadingCtrl: LoadingController,
+  public toastCtrl: ToastController){
+
   }
 
   ionViewDidLoad() {
@@ -36,66 +45,8 @@ export class AddFoodPage{
       this.inputs = data;
     });
     modal.present();
-  }
+   }
 
-
-  //image picker
-  openImagePicker(){
-    let options= {
-      maximumImagesCount: 5,
-    }
-    this.photos = new Array<string>();
-    this.imagePicker.getPictures(options)
-    .then((results) => {
-      this.reduceImages(results).then(() => {
-        console.log('all images cropped!!');
-      });
-    }, (err) => { console.log(err) });
-  }
-
-  reduceImages(selected_pictures: any) : any{
-      return selected_pictures.reduce((promise:any, item:any) => {
-        return promise.then((result) => {
-          return this.cropService.crop(item, {quality: 75})
-          .then(cropped_image => this.photos.push(cropped_image));
-        });
-      }, Promise.resolve());
-    }
-
-  takePicture(){
-  let options =
-  {
-    quality: 100,
-    correctOrientation: true
-  };
-  this.camera.getPicture(options)
-  .then((data) => {
-    this.photos = new Array<string>();
-    this.cropService
-    .crop(data, {quality: 75})
-    .then((newImage) => {
-      this.photos.push(newImage);
-    }, error => console.error("Error cropping image", error));
-  }, function(error) {
-    console.log(error);
-  });
-}
-
-  //update food
-  updateFood(user) {
-    // let arr = [];
-    // _.forEach(this.foodCatId, (item) => {
-    //   item.status ? arr.push(item.id) : false
-    // })
-    // axios
-    //   .post(route.app_url + '/update-user/' + user, {food_category: arr} )
-    //   .then(res => {
-    //     console.log(res)
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
-  }
 
   //go next
   goNext(event){
@@ -107,6 +58,65 @@ export class AddFoodPage{
     this.navCtrl.setRoot(SelectRestaurantCatPage);
   }
 
+  //file get
+  getImage() {
+  const options = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.FILE_URI,
+    sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+  }
+
+  this.camera.getPicture(options).then((imageData) => {
+    this.imageURI = imageData;
+  }, (err) => {
+    console.log(err);
+    this.presentToast(err);
+  });
+}
+
+
+  // file upload
+  uploadFile() {
+  let loader = this.loadingCtrl.create({
+    content: "Uploading..."
+  });
+  loader.present();
+  const fileTransfer: FileTransferObject = this.transfer.create();
+
+  let options: FileUploadOptions = {
+    fileKey: 'ionicfile',
+    fileName: 'ionicfile',
+    chunkedMode: false,
+    mimeType: "image/jpeg",
+    headers: {}
+  }
+
+  fileTransfer.upload(this.imageURI, 'http://192.168.0.7:8080/api/uploadImage', options)
+    .then((data) => {
+    console.log(data+" Uploaded Successfully");
+    this.imageFileName = "http://192.168.0.7:8080/static/images/ionicfile.jpg"
+    loader.dismiss();
+    this.presentToast("Image uploaded successfully");
+  }, (err) => {
+    console.log(err);
+    loader.dismiss();
+    this.presentToast(err);
+  });
+}
+
+presentToast(msg) {
+  let toast = this.toastCtrl.create({
+    message: msg,
+    duration: 3000,
+    position: 'bottom'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
 
 
 }

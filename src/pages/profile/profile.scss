@@ -1,5 +1,6 @@
 page-profile {
 	.profile {
+	
 		margin: 0;
 		.profile-background {
 			width: 100%;
@@ -41,7 +42,7 @@ page-profile {
 			.details {
 				padding: 15px;
 				width: 100%;
-			    background: #424847;
+			    background: rgba(0,0,0,0.5);
 			    border-radius: 3px;
 			    color: white;
 			    text-align: left;
@@ -49,6 +50,9 @@ page-profile {
 			    .dashboard-title {
 			    	display: flex;
 			    	justify-content: space-between;
+			    	ion-icon{
+			    		color:#fff;
+			    	}
 			    }
 			    ul.activity {
 			  		display: flex;
@@ -77,14 +81,14 @@ page-profile {
 			    font-size: 2.0em;
 			    width: 100%;
 			    font-weight: bold;
-			    color: #fff;
+			    color: #000;
 		  	}
 		  	.card-subtitle {
 			    font-size: 1.0em;
 			    position: absolute;
 			    top: 52%;
 			    width: 100%;
-			    color: #fff;
+			    color: #000;
 		  	}
 
 		}

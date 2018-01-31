@@ -25,7 +25,7 @@
 		  </ion-item>
 
 		  <ion-item class="add-img">
-		  	<img src="../assets/images/Intro/gallery.png" (tap)="openImagePicker()">
+		  	<img src="../assets/images/Intro/gallery.png" (tap)="openFile()">
 		  	<p>Add Image</p>
 		  </ion-item>
 
@@ -49,6 +49,18 @@
 	            (tap)="photoViewerfunc(photo)"/>
 	          	</ion-slide>
 	          </ion-slides>		  
+		  </ion-item>
+
+		  <ion-item>
+		    <p>{{imageURI}}</p>
+		    <button ion-button color="secondary" (click)="getImage()">Get Image</button>
+		  </ion-item>
+		  <ion-item>
+		    <h4>Image Preview</h4>
+		    <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+		  </ion-item>
+		  <ion-item>
+		    <button ion-button (click)="uploadFile()">Upload</button>
 		  </ion-item>
 
 	</ion-list>

@@ -72,4 +72,8 @@ export class FoodsPage {
     console.log('ionViewDidLoad FoodsPage');
   }
 
+
+
+
+
 }

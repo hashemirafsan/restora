@@ -39,6 +39,9 @@ import { RecommendedPage } from '../pages/recommended/recommended';
 import { AddFoodPage } from '../pages/add-food/add-food';
 import { AutocompletePage } from '../pages/autocomplete/autocomplete';
 
+import { FoodListPage } from '../pages/food-list/food-list';
+import { AllReviewsPage } from '../pages/all-reviews/all-reviews';
+import { RestaurantAllReviewsPage } from '../pages/restaurant-all-reviews/restaurant-all-reviews';
 
 import axios from 'axios';
 import _ from 'lodash';
@@ -53,7 +56,7 @@ export class MyApp {
   
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CreateRestaurantPage;
+  rootPage: any = AddFoodPage;
 
   public getData;
   map: GoogleMap;
@@ -98,10 +101,11 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Profile', component: ProfilePage},
+      { title: 'Recommended', component: RecommendedPage},
       { title: 'Foods', component: FoodsPage},
       { title: 'Restaurant', component: RestaurantsPage },
-      { title: 'Settings', component: SettingsPage },
-      { title: 'Recommended', component: RecommendedPage }
+      { title: 'Settings', component: SettingsPage }
+      
 
     ];
 

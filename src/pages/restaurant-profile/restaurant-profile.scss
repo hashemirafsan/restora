@@ -191,10 +191,28 @@ page-restaurant-profile {
 						#title{
 							position: relative;
 						}
-						#select{
-							float: right;
-							right: 0;
-						}
+						ion-segment{
+							margin: auto;
+							width: 50%;
+							#edit{
+								background: #fff;
+								border:1px solid #000;
+								color:#000;
+							}
+							#edit:hover{
+								background: rgba(0,0,0,0.5);
+								color:#fff;
+							}
+							#delete{
+								background: #fff;
+								border:1px solid #000;
+								color:#000;
+							}
+							#delete:hover{
+								background: rgba(0,0,0,0.5);
+								color:#fff;
+							}
+					    }
 
 					}
 					p{
