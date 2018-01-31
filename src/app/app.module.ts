@@ -39,9 +39,11 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { FileChooser } from '@ionic-native/file-chooser';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [    
@@ -114,6 +116,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     PhotoViewer,
     BackgroundMode,
     LocalNotifications,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
